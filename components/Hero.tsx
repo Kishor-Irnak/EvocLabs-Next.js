@@ -193,7 +193,7 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
         <div className="mb-6 md:mb-10 max-w-5xl w-full space-y-2">
           <BlurText
             text="Turn Strategy into"
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] block !text-text-main"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium font-grotesk tracking-tighter leading-[1.1] block text-text-main!"
             delay={0.1}
           />
 
@@ -206,7 +206,7 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
             className="relative inline-block px-6 py-2"
           >
             <motion.span
-              className="text-4xl p-2 sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] block italic text-transparent bg-clip-text"
+              className="text-4xl p-2 sm:text-5xl md:text-6xl lg:text-7xl font-bold font-grotesk tracking-tighter leading-[1.1] block italic text-transparent bg-clip-text"
               style={{
                 backgroundImage:
                   "linear-gradient(110deg, #9ca3af 0%, #ffffff 25%, #9ca3af 50%, #ffffff 75%, #9ca3af 100%)",
@@ -278,7 +278,7 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
           {/* Content Area */}
           <div className="pt-8 md:pt-12 bg-surface relative min-h-[250px] md:min-h-[400px]">
             {/* Gradient Overlay for subtle depth */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent z-10 pointer-events-none opacity-50" />
+            <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent z-10 pointer-events-none opacity-50" />
 
             {/* The Dashboard Component */}
             <div className="w-full h-full overflow-hidden">
@@ -286,7 +286,7 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
             </div>
 
             {/* Mobile Only Bottom Fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent z-20 md:hidden" />
+            <div className="absolute bottom-0 left-0 right-0 h-20 bg-linear-to-t from-background to-transparent z-20 md:hidden" />
           </div>
         </motion.div>
       </div>

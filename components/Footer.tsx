@@ -17,7 +17,7 @@ const Footer: React.FC<FooterProps> = ({ onCareersClick }) => {
             <div className="flex items-center gap-2 mb-6">
               <div className="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center">
                 <Image
-                  src="/EvocLabs-Next.js/EvocLab_Logo.png"
+                  src="/EvocLab_Logo.png"
                   alt="Evoc Labs Logo"
                   width={20}
                   height={20}

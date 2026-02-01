@@ -91,7 +91,7 @@ const Navbar: React.FC<NavbarProps> = ({
         >
           <div className="w-8 h-8 rounded flex items-center justify-center">
             <Image
-              src="/EvocLabs-Next.js/EvocLab_Logo.png"
+              src="/EvocLab_Logo.png"
               alt="Evoc Labs Logo"
               width={32}
               height={32}

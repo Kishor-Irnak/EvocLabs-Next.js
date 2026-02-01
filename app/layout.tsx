@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     images: ["https://i.postimg.cc/3wWLDB2q/Instagram-story-16.png"],
   },
   icons: {
-    icon: "/EvocLabs-Next.js/favicon.ico",
-    apple: "/EvocLabs-Next.js/apple-touch-icon.png",
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
-  manifest: "/EvocLabs-Next.js/site.webmanifest",
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased bg-background text-text-main font-sans selection:bg-primary/30 selection:text-primary-hover`}
+        className={`${inter.variable} ${outfit.variable} antialiased bg-background text-text-main font-sans selection:bg-primary/30 selection:text-primary-hover`}
       >
         {children}
       </body>

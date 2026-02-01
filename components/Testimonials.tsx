@@ -13,7 +13,7 @@ import {
 } from "framer-motion";
 
 // Importing Brand Logos
-const BASE_PATH = "/EvocLabs-Next.js";
+const BASE_PATH = "";
 
 const clients = [
   `${BASE_PATH}/Brands_Logo/Artboard 1.png`,
