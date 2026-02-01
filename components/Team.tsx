@@ -44,7 +44,7 @@ const Team: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 bg-background relative overflow-hidden">
+    <section className="py-24 bg-background relative overflow-hidden max-w-[100vw]">
       {/* Background Gradients */}
       <div className="absolute top-1/4 -left-20 w-[400px] h-[400px] bg-primary/5 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 -right-20 w-[400px] h-[400px] bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
