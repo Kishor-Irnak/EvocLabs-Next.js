@@ -58,7 +58,7 @@ const LogoStrip = ({
               alt="Brand Logo"
               className="h-12 md:h-16 w-auto object-contain"
               loading="lazy"
-              decodings="async"
+              decoding="async"
             />
           </div>
         ))}
