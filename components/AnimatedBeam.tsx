@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export interface AnimatedBeamProps {
   className?: string;
-  containerRef: React.RefObject<HTMLElement>;
-  fromRef: React.RefObject<HTMLElement>;
-  toRef: React.RefObject<HTMLElement>;
+  containerRef: React.RefObject<any>;
+  fromRef: React.RefObject<any>;
+  toRef: React.RefObject<any>;
   curvature?: number;
   reverse?: boolean; // direction of flow
   duration?: number;
