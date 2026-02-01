@@ -118,7 +118,7 @@ const WhyChooseUs: React.FC = () => {
                   muted
                   playsInline
                   preload="metadata"
-                  src="/rocket_video.mp4"
+                  src="/EvocLabs-Next.js/rocket_video.mp4"
                 />
               </div>
             </div>

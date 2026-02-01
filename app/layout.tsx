@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     images: ["https://i.postimg.cc/3wWLDB2q/Instagram-story-16.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/EvocLabs-Next.js/favicon.ico",
+    apple: "/EvocLabs-Next.js/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/EvocLabs-Next.js/site.webmanifest",
 };
 
 export default function RootLayout({

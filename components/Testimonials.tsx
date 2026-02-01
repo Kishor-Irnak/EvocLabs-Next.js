@@ -13,21 +13,23 @@ import {
 } from "framer-motion";
 
 // Importing Brand Logos
+const BASE_PATH = "/EvocLabs-Next.js";
+
 const clients = [
-  "/Brands_Logo/Artboard 1.png",
-  "/Brands_Logo/Artboard 2.png",
-  "/Brands_Logo/Artboard 3.png",
-  "/Brands_Logo/Artboard 4.png",
-  "/Brands_Logo/Artboard 5.png",
-  "/Brands_Logo/Artboard 6.png",
-  "/Brands_Logo/Artboard 7.png",
-  "/Brands_Logo/Artboard 8.png",
-  "/Brands_Logo/Artboard 9.png",
-  "/Brands_Logo/Artboard 11.png",
-  "/Brands_Logo/Artboard 12.png",
-  "/Brands_Logo/Artboard 13.png",
-  "/Brands_Logo/Artboard 14.png",
-  "/Brands_Logo/Artboard 15.png",
+  `${BASE_PATH}/Brands_Logo/Artboard 1.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 2.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 3.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 4.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 5.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 6.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 7.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 8.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 9.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 11.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 12.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 13.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 14.png`,
+  `${BASE_PATH}/Brands_Logo/Artboard 15.png`,
 ];
 
 const LogoStrip = ({

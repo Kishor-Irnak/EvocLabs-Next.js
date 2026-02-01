@@ -47,7 +47,7 @@ const Founder: React.FC = () => {
                 {/* Image */}
                 <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-zinc-900">
                   <Image
-                    src="/founderPfp.jpg"
+                    src="/EvocLabs-Next.js/founderPfp.jpg"
                     alt="Nishant Raj"
                     fill
                     className="object-cover filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105"
