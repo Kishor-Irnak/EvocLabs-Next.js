@@ -13,19 +13,19 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "SAHIL",
+    name: "SAHIL SOLANKI",
     role: "CMO",
     image: "/EvocLabs-Next.js/sahil.jpeg",
   },
   {
-    name: "PIYUSH",
+    name: "PIYUSH RATHORE",
     role: "CTO",
     image: "/EvocLabs-Next.js/piyush.JPG",
   },
   {
-    name: "ANNIE BADEJO",
-    role: "COO",
-    image: "/EvocLabs-Next.js/apple-touch-icon.png", // Using a placeholder for consistency if no COO image provided
+    name: "KISHOR IRNAK",
+    role: "CPO",
+    image: "/EvocLabs-Next.js/kishor.jpeg",
   },
 ];
 
@@ -65,7 +65,7 @@ const Team: React.FC = () => {
               src={member.image}
               alt={member.name}
               fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+              className="object-cover grayscale group-hover:grayscale-0 group-hover:brightness-110 transition-all duration-1000 group-hover:scale-105"
             />
 
             {/* Hover Info */}
