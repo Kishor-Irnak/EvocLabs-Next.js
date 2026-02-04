@@ -29,16 +29,19 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 flex justify-center">
       <div className="w-full max-w-4xl bg-black/80 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between py-2 px-2 md:pl-6 shadow-2xl">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-[120px] h-[40px] relative">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="w-[80px] h-[28px] relative">
             <Image
-              src="/EvocLab_Logo.png"
+              src="/EvocLabs-Next.js/EvocLab_Logo.png"
               alt="Evoc Labs"
               fill
               className="object-contain filter brightness-125"
               priority
             />
           </div>
+          <span className="text-white font-bold tracking-tight text-lg hidden sm:inline-block font-oswald uppercase">
+            Evoc Labs
+          </span>
         </Link>
 
         {/* Desktop Links */}

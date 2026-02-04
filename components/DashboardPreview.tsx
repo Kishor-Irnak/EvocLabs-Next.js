@@ -23,7 +23,7 @@ import {
   MoreHorizontal,
 } from "lucide-react";
 // @ts-ignore
-const logo = "/evoclabs_mini_logo.png";
+const logo = "/EvocLabs-Next.js/evoclabs_mini_logo.png";
 
 const data = [
   { name: "Jan", value: 3000, profit: 1400 },

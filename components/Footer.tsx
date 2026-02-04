@@ -143,18 +143,23 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="px-8 md:px-12 pb-24 pt-20 border-t border-white/10 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
           <div className="max-w-md">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-[120px] h-[40px] relative">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-[100px] h-[34px] relative">
                 <Image
-                  src="/EvocLab_Logo.png"
+                  src="/EvocLabs-Next.js/EvocLab_Logo.png"
                   alt="Evoc Labs"
                   fill
                   className="object-contain filter brightness-125 grayscale"
                 />
               </div>
-              <span className="text-2xl md:text-3xl font-oswald font-semibold tracking-tighter text-white uppercase italic">
-                Profit Engine.
-              </span>
+              <div className="flex flex-col">
+                <span className="text-xl md:text-2xl font-oswald font-semibold tracking-tighter text-white uppercase italic leading-none">
+                  Evoc Labs
+                </span>
+                <span className="text-[10px] text-zinc-500 font-mono tracking-widest uppercase mt-1">
+                  Profit Engine
+                </span>
+              </div>
             </div>
             <p className="text-xs text-zinc-500 leading-relaxed max-w-xs font-mono uppercase tracking-widest">
               Engineering business growth for the next generation of founders.
