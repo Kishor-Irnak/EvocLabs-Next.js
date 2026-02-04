@@ -5,7 +5,6 @@ import { Mail, ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import BlurText from "./BlurText";
 import Script from "next/script";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,7 +55,6 @@ const Contact: React.FC = () => {
     setError("");
 
     try {
-      // Save to Firebase Firestore
       const formSubmissionData = {
         name: formData.name,
         email: formData.email,
@@ -70,19 +68,8 @@ const Contact: React.FC = () => {
 
       await addDoc(collection(db, "formSubmissions"), formSubmissionData);
 
-      // Track Meta Pixel Contact event
-      if (typeof window !== "undefined" && (window as any).fbq) {
-        (window as any).fbq("track", "Contact", {
-          content_name: "Contact Form",
-          value: 0,
-          currency: "INR",
-        });
-      }
-
-      // Show success state immediately after Firebase save
       setIsSubmitted(true);
 
-      // Secondary API call
       const apiBase = "https://evoc-labz-backend.onrender.com";
       const apiUrl = `${apiBase}/api/book-demo`;
 
@@ -112,50 +99,37 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen flex items-center py-12 lg:py-0 bg-background overflow-hidden"
+      className="container border-x overflow-hidden max-w-7xl z-20 border-white/10 border-b mx-auto py-24 px-6 bg-[#020202]"
     >
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="lazyOnload"
       />
 
-      {/* Optional: Subtle Background Gradient Blob for Premium feel */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+        {/* Left Column */}
+        <div className="flex flex-col justify-center">
+          <div className="inline-flex items-center justify-center px-3 py-1 mb-6 border border-zinc-500/30 bg-zinc-500/10 text-zinc-300 text-[10px] font-medium tracking-widest uppercase font-mono">
+            Origin Point
+          </div>
 
-      <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          {/* Left Column: Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col justify-center"
+            className="text-5xl md:text-6xl lg:text-7xl font-oswald uppercase tracking-tight leading-[0.9] text-white mb-10"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface border border-border w-fit mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              <span className="text-xs font-medium text-text-secondary uppercase tracking-wider">
-                Get Started
-              </span>
-            </div>
+            Ready to <span className="text-zinc-500">ignite</span> your growth?
+          </motion.h2>
 
-            <div className="mb-6">
-              <BlurText
-                text="Ready to ignite your growth?"
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-main tracking-tight leading-[1.1]"
-              />
-            </div>
+          <p className="text-zinc-400 text-lg mb-12 leading-relaxed max-w-md">
+            Whether you're ready to scale aggressively or just need a second
+            opinion on your current ad stack—we're here to help.
+          </p>
 
-            <p className="text-text-muted text-lg mb-10 leading-relaxed max-w-md">
-              Whether you're ready to scale aggressively or just need a second
-              opinion on your current ad stack — we're here to help.
-            </p>
-
-            {/* Calendly Inline Widget */}
-            <div className="rounded-3xl border border-border bg-white overflow-hidden shadow-2xl shadow-primary/5">
+          <div className="flex flex-col gap-6">
+            {/* Calendly Widget Styled as a subtle box */}
+            <div className="rounded-2xl border border-white/5 bg-[#050505] overflow-hidden shadow-2xl">
               <div
                 className="calendly-inline-widget"
                 data-url="https://calendly.com/connect-sociodesk/evoc-labz?hide_event_type_details=1&hide_gdpr_banner=1"
@@ -163,178 +137,151 @@ const Contact: React.FC = () => {
               ></div>
             </div>
 
-            <div className="mt-8 flex items-center gap-3 text-text-muted text-sm font-medium">
+            <div className="flex items-center gap-3 text-zinc-500 text-sm font-mono uppercase tracking-widest mt-4">
               <Mail className="w-4 h-4" />
               <span>hello@evoclabs.com</span>
             </div>
-          </motion.div>
+          </div>
+        </div>
 
-          {/* Right Column: Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
-            {/* Form Container */}
-            <div className="p-6 mt-12 md:p-8 lg:p-10 rounded-3xl border border-border bg-surface shadow-2xl shadow-black/5">
-              {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  {error && (
-                    <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-red-500 text-sm">
-                      {error}
-                    </div>
-                  )}
+        {/* Right Column: Form */}
+        <div className="relative pt-12 lg:pt-24">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 w-32 h-32 border-t border-r border-white/5 pointer-events-none" />
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {/* Name */}
-                    <div className="space-y-1.5">
-                      <Label
-                        htmlFor="name"
-                        className="text-xs font-semibold text-text-secondary uppercase tracking-wider ml-1"
-                      >
-                        Name
-                      </Label>
-                      <Input
-                        id="name"
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-background border-border rounded-xl px-4 py-6 text-text-main focus-visible:ring-primary h-12"
-                        placeholder="John Doe"
-                      />
-                    </div>
+          <div className="p-8 border border-white/10 bg-zinc-900/10 backdrop-blur-sm rounded-none shadow-2xl relative">
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {error && (
+                  <div className="bg-red-500/10 border border-red-500/30 rounded-none p-3 text-red-500 text-xs font-mono">
+                    {error}
+                  </div>
+                )}
 
-                    {/* Email */}
-                    <div className="space-y-1.5">
-                      <Label
-                        htmlFor="email"
-                        className="text-xs font-semibold text-text-secondary uppercase tracking-wider ml-1"
-                      >
-                        Work Email
-                      </Label>
-                      <Input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-background border-border rounded-xl px-4 py-6 text-text-main focus-visible:ring-primary h-12"
-                        placeholder="john@company.com"
-                      />
-                    </div>
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="name"
+                      className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest"
+                    >
+                      Full Name
+                    </Label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-black border-white/10 rounded-none h-12 text-white placeholder:text-zinc-700"
+                      placeholder="EX. JOHN DOE"
+                    />
                   </div>
 
-                  {/* Website & Budget */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div className="space-y-1.5">
-                      <Label
-                        htmlFor="website"
-                        className="text-xs font-semibold text-text-secondary uppercase tracking-wider ml-1"
-                      >
-                        Website
-                      </Label>
-                      <Input
-                        id="website"
-                        type="url"
-                        name="website"
-                        value={formData.website}
-                        onChange={handleInputChange}
-                        required
-                        className="bg-background border-border rounded-xl px-4 py-6 text-text-main focus-visible:ring-primary h-12"
-                        placeholder="https://..."
-                      />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <Label className="text-xs font-semibold text-text-secondary uppercase tracking-wider ml-1">
-                        Budget
-                      </Label>
-                      <Select
-                        onValueChange={handleSelectChange}
-                        value={formData.budget}
-                        required
-                      >
-                        <SelectTrigger className="bg-background border-border rounded-xl px-4 py-6 text-text-main h-12 focus:ring-primary">
-                          <SelectValue placeholder="Select Range" />
-                        </SelectTrigger>
-                        <SelectContent className="bg-surface border-border">
-                          <SelectItem value="<1L">Less than ₹1L</SelectItem>
-                          <SelectItem value="1L-3L">₹1L – ₹3L</SelectItem>
-                          <SelectItem value="3L-5L">₹3L – ₹5L</SelectItem>
-                          <SelectItem value="5L+">₹5L+</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="email"
+                      className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest"
+                    >
+                      Work Email
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-black border-white/10 rounded-none h-12 text-white placeholder:text-zinc-700"
+                      placeholder="EX. JOHN@COMPANY.COM"
+                    />
                   </div>
 
-                  {/* Message */}
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
+                    <Label
+                      htmlFor="website"
+                      className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest"
+                    >
+                      Website
+                    </Label>
+                    <Input
+                      id="website"
+                      type="url"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleInputChange}
+                      required
+                      className="bg-black border-white/10 rounded-none h-12 text-white placeholder:text-zinc-700"
+                      placeholder="HTTPS://WWW.DOMAIN.COM"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
+                      Monthly Budget
+                    </Label>
+                    <Select
+                      onValueChange={handleSelectChange}
+                      value={formData.budget}
+                      required
+                    >
+                      <SelectTrigger className="bg-black border-white/10 rounded-none h-12 text-white">
+                        <SelectValue placeholder="SELECT RANGE" />
+                      </SelectTrigger>
+                      <SelectContent className="bg-[#0A0A0A] border-white/10 text-white rounded-none">
+                        <SelectItem value="<1L">LESS THAN ₹1L</SelectItem>
+                        <SelectItem value="1L-3L">₹1L – ₹3L</SelectItem>
+                        <SelectItem value="3L-5L">₹3L – ₹5L</SelectItem>
+                        <SelectItem value="5L+">₹5L+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
                     <Label
                       htmlFor="message"
-                      className="text-xs font-semibold text-text-secondary uppercase tracking-wider ml-1"
+                      className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest"
                     >
-                      Goals
+                      Growth Goals
                     </Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={3}
-                      className="bg-background border-border rounded-xl px-4 py-3 text-text-main focus-visible:ring-primary min-h-[100px]"
-                      placeholder="Tell us about your goals..."
+                      className="bg-black border-white/10 rounded-none min-h-[120px] text-white placeholder:text-zinc-700"
+                      placeholder="TELL US ABOUT YOUR SCALING GOALS..."
                     />
                   </div>
+                </div>
 
-                  {/* Submit Button */}
-                  <Button
-                    type="submit"
-                    disabled={isLoading}
-                    className="w-full bg-text-main hover:bg-text-secondary text-background font-bold py-6 rounded-xl transition-all shadow-lg active:scale-[0.98] disabled:opacity-70"
-                  >
-                    {isLoading ? "Sending..." : "Send Request"}
-                    <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-
-                  <p className="text-center text-xs text-text-muted/70">
-                    We usually respond within 24 hours.
-                  </p>
-                </form>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="h-[480px] flex flex-col items-center justify-center text-center"
+                <Button
+                  type="submit"
+                  disabled={isLoading}
+                  className="w-full bg-white hover:bg-zinc-200 text-black font-bold h-14 rounded-none transition-all uppercase tracking-widest text-xs"
                 >
-                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 ring-8 ring-primary/5">
-                    <CheckCircle className="w-10 h-10 text-primary" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-text-main mb-2">
-                    Request Received!
-                  </h3>
-
-                  <p className="text-text-muted max-w-[250px] mx-auto mb-8">
-                    Thanks! We've received your details and will be in touch
-                    shortly.
-                  </p>
-
-                  <Button
-                    variant="link"
-                    onClick={() => setIsSubmitted(false)}
-                    className="text-primary hover:text-primary-hover p-0 h-auto"
-                  >
-                    Send another request
-                  </Button>
-                </motion.div>
-              )}
-            </div>
-          </motion.div>
+                  {isLoading ? "PROCESSSING..." : "Request Access"}
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </form>
+            ) : (
+              <div className="h-[400px] flex flex-col items-center justify-center text-center">
+                <CheckCircle className="w-12 h-12 text-emerald-500 mb-6" />
+                <h3 className="text-2xl font-oswald text-white uppercase tracking-tight mb-2">
+                  Request Received
+                </h3>
+                <p className="text-zinc-500 text-sm mb-8 max-w-[200px]">
+                  We've received your details and will be in touch shortly.
+                </p>
+                <Button
+                  variant="link"
+                  onClick={() => setIsSubmitted(false)}
+                  className="text-zinc-400 uppercase text-[10px] tracking-widest"
+                >
+                  Send Another
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>

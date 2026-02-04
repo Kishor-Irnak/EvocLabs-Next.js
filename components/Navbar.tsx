@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 const Navbar: React.FC = () => {
@@ -31,17 +30,10 @@ const Navbar: React.FC = () => {
       <div className="w-full max-w-4xl bg-black/80 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between py-2 px-2 md:pl-6 shadow-2xl">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 relative">
-            <Image
-              src="/EvocLab_Logo.png"
-              alt="Evoc Labs"
-              fill
-              className="object-contain filter brightness-125"
-            />
-          </div>
-          <span className="text-white font-bold tracking-tight hidden sm:inline-block">
-            Evoc Labs
-          </span>
+          <div
+            className="w-[100px] h-[40px] bg-[url(https://cdn.midjourney.com/a3840b63-36c4-4a6b-80dd-5c41d0f4a259/0_0.png?w=800&q=80)] bg-cover bg-center rounded"
+            aria-label="Evoc Labs Logo"
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -61,7 +53,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-2">
           <Link
             href="/book-demo"
-            className="bg-white text-black text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-zinc-200 transition-colors hidden sm:block"
+            className="bg-white text-black text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-colors hidden sm:block shadow-lg shadow-white/5 active:scale-95 transition-all"
           >
             Get Started
           </Link>
@@ -80,9 +72,9 @@ const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
             className="absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 md:hidden z-40"
           >
             <div className="flex flex-col gap-4">
@@ -99,7 +91,7 @@ const Navbar: React.FC = () => {
               <Link
                 href="/book-demo"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-white text-black text-center py-3 rounded-full font-semibold mt-4"
+                className="bg-white text-black text-center py-4 rounded-full font-semibold mt-4 active:scale-95 transition-transform"
               >
                 Get Started
               </Link>

@@ -21,6 +21,9 @@ const Results = dynamic(() => import("@/components/Results"), { ssr: true });
 const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs"), {
   ssr: true,
 });
+const TrackingSection = dynamic(() => import("@/components/TrackingSection"), {
+  ssr: true,
+});
 const Services = dynamic(() => import("@/components/Services"), { ssr: true });
 const Founder = dynamic(() => import("@/components/Founder"), { ssr: true });
 const Team = dynamic(() => import("@/components/Team"), { ssr: true });
@@ -40,6 +43,7 @@ export default function Home() {
         <Testimonials />
         <Results />
         <WhyChooseUs />
+        <TrackingSection />
         <Services />
         <Founder />
         <Team />

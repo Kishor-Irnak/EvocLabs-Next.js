@@ -13,7 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
   const { scrollY } = useScroll();
-  const scale = useTransform(scrollY, [0, 400], [0.9, 1]);
+  const scale = useTransform(scrollY, [0, 400], [0.95, 1]);
   const opacity = useTransform(scrollY, [0, 400], [0.8, 1]);
 
   return (
@@ -93,11 +93,13 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
           initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.1, ease: [0.2, 0.8, 0.2, 1] }}
-          className="text-4xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.1] mb-6 max-w-5xl mx-auto bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-zinc-500"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1.05] mb-6 max-w-5xl mx-auto bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-zinc-500 pb-2"
         >
           Turn Strategy into
           <br />
-          <span className="italic font-playfair">Profit Engine</span>
+          <span className="italic font-playfair font-normal">
+            Profit Engine
+          </span>
         </motion.h1>
 
         {/* Subhead */}
@@ -120,14 +122,14 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
         >
           <Link
             href="/book-demo"
-            className="inline-flex items-center gap-2 hover:bg-zinc-200 transition-all text-sm font-semibold text-black bg-white rounded-full px-6 py-3.5 shadow-xl shadow-white/5 active:scale-95"
+            className="inline-flex items-center gap-2 hover:bg-zinc-200 transition-all text-sm font-semibold text-black bg-white rounded-full px-8 py-4 shadow-xl shadow-white/5 active:scale-95"
           >
             Take the 5-Minute Diagnostic
             <ArrowRight size={16} />
           </Link>
           <Link
             href="#"
-            className="inline-flex items-center px-6 py-3.5 rounded-full border border-white/10 bg-white/5 text-white text-sm font-medium hover:bg-white/10 transition-all active:scale-95"
+            className="inline-flex items-center px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white text-sm font-medium hover:bg-white/10 transition-all active:scale-95"
           >
             See How It Works
           </Link>

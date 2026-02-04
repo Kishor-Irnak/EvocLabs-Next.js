@@ -1,93 +1,64 @@
+"use client";
+
 import React from "react";
-// Importing icons from react-icons (Simple Icons and FontAwesome)
 import { SiGoogleads, SiMeta, SiShopify, SiPhonepe } from "react-icons/si";
-import { FaTruckFast } from "react-icons/fa6"; // Fallback icon for F-SHIP
+import { FaTruckFast } from "react-icons/fa6";
+import { motion } from "framer-motion";
+
+const partners = [
+  { name: "F-SHIP", icon: FaTruckFast, color: "text-[#FF6B00]" },
+  { name: "Google Ads", icon: SiGoogleads, color: "text-[#FBBC05]" },
+  { name: "Meta Ads", icon: SiMeta, color: "text-[#1877F2]" },
+  { name: "Shopify", icon: SiShopify, color: "text-[#96BF48]" },
+  { name: "PhonePe", icon: SiPhonepe, color: "text-[#6739B7]" },
+];
 
 const LogoTicker: React.FC = () => {
-  // Define partners with their generic name, specific icon component, and brand color
-  const partners = [
-    { name: "F-SHIP", icon: FaTruckFast, color: "text-orange-500" },
-    { name: "Google Ads", icon: SiGoogleads, color: "text-yellow-400" },
-    { name: "Meta Ads", icon: SiMeta, color: "text-blue-500" },
-    { name: "Shopify", icon: SiShopify, color: "text-green-500" },
-    { name: "PhonePe", icon: SiPhonepe, color: "text-purple-500" },
-  ];
-
-  const MarqueeRow = ({
-    isColored = false,
-    className = "",
-  }: {
-    isColored?: boolean;
-    className?: string;
-  }) => (
-    <div
-      className={`animate-marquee whitespace-nowrap flex items-center ${className}`}
-    >
-      {Array(8)
-        .fill(partners)
-        .flat()
-        .map((partner, index) => (
-          <div
-            key={index}
-            className={`flex-shrink-0 px-8 md:px-16 flex flex-col items-center justify-center space-y-2 cursor-pointer transition-colors duration-300 ${
-              isColored ? partner.color : "text-slate-700"
-            }`}
-          >
-            <partner.icon className="text-4xl md:text-5xl" />
-            <span className="sr-only text-xs font-semibold tracking-wide">
-              {partner.name}
-            </span>
-          </div>
-        ))}
-    </div>
-  );
+  // Triple the list to ensure seamless looping without gaps
+  const tickerItems = [...partners, ...partners, ...partners];
 
   return (
-    <div className="py-10 bg-background relative z-10">
-      <div className="max-w-7xl mx-auto px-9 mb-8 text-center">
-        <p className="text-sm text-slate-500 font-medium tracking-[0.2em] uppercase">
-          Official Business Partners
-        </p>
-      </div>
+    <div className="py-20 bg-[#020202] border-b border-white/10 relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-white/5" />
 
-      <div className="relative flex w-full overflow-hidden">
-        {/* Layer 1: Background (Grayscale/Slate) */}
-        <div className="relative z-0 select-none pointer-events-none">
-          <MarqueeRow isColored={false} />
+      <div className="container max-w-7xl border-x border-white/10 mx-auto">
+        <div className="mb-12 text-center">
+          <span className="text-[10px] font-mono text-zinc-600 uppercase tracking-[0.4em]">
+            Official Infrastructure Partners
+          </span>
         </div>
 
-        {/* Layer 2: Foreground (Colorful + Masked) 
-            - Positioned absolutely to overlay exactly on top of Layer 1.
-            - Uses mask-image to only show the center portion.
-        */}
-        <div
-          className="absolute inset-0 z-10 select-none pointer-events-none"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)",
-          }}
-        >
-          <MarqueeRow isColored={true} />
+        <div className="relative flex w-full overflow-hidden">
+          {/* Side Gradients for fading effect */}
+          <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-[#020202] via-[#020202]/80 to-transparent z-10" />
+          <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-[#020202] via-[#020202]/80 to-transparent z-10" />
+
+          {/* Framer Motion Ticker */}
+          <motion.div
+            className="flex items-center gap-16 md:gap-32 whitespace-nowrap"
+            animate={{
+              x: ["0%", "-33.33%"],
+            }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {tickerItems.map((partner, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center transition-all duration-500 group"
+              >
+                <partner.icon
+                  className={`text-4xl md:text-5xl ${partner.color} opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(255,255,255,0.05)]`}
+                />
+              </div>
+            ))}
+          </motion.div>
         </div>
-
-        {/* Side Gradients for fading out edges entirely */}
-        <div className="absolute top-0 left-0 w-24 md:w-40 h-full bg-gradient-to-r from-background via-background/80 to-transparent z-20 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-24 md:w-40 h-full bg-gradient-to-l from-background via-background/80 to-transparent z-20 pointer-events-none" />
       </div>
-
-      <style>{`
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 40s linear infinite;
-          width: fit-content;
-          will-change: transform;
-        }
-      `}</style>
     </div>
   );
 };

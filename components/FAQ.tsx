@@ -3,7 +3,6 @@
 import React from "react";
 import { FaqItem } from "@/lib/types";
 import { motion } from "framer-motion";
-import BlurText from "./BlurText";
 import {
   Accordion,
   AccordionContent,
@@ -51,44 +50,47 @@ interface FAQProps {
 }
 
 const FAQ: React.FC<FAQProps> = ({
-  title = "Frequently asked questions",
-  description = "Everything you need to know about working with us.",
+  title = "Frequently Asked Questions",
+  description = "Everything you need to know about scaling with the Profit Engine™.",
   items = faqs,
 }) => {
   return (
-    <section id="faq" className="py-24 bg-background relative">
-      <div className="max-w-4xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <BlurText
-            text={title}
-            className="text-3xl md:text-5xl font-semibold mb-4 text-text-main tracking-tight"
-          />
-          <div className="mt-4">
-            <BlurText
-              text={description}
-              className="text-text-muted inline-block"
-              delay={0.2}
-            />
+    <section
+      id="faq"
+      className="container border-x overflow-hidden max-w-7xl z-20 border-white/10 border-b mx-auto py-24 px-6 bg-[#020202]"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {/* Left: Headers */}
+        <div>
+          <div className="inline-flex items-center justify-center px-3 py-1 mb-6 border border-zinc-500/30 bg-zinc-500/10 text-zinc-300 text-[10px] font-medium tracking-widest uppercase font-mono">
+            Support Protocol
           </div>
+          <h2 className="text-5xl md:text-6xl font-oswald uppercase tracking-tight leading-[0.9] text-white mb-8">
+            Common <span className="text-zinc-500">Queries</span>
+          </h2>
+          <p className="text-zinc-400 text-lg leading-relaxed max-w-sm">
+            {description}
+          </p>
         </div>
 
+        {/* Right: FAQ Accordion */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
         >
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-2">
             {items.map((faq, index) => (
               <AccordionItem
                 value={`item-${index}`}
                 key={index}
-                className="border-none bg-surface/30 rounded-xl px-2 transition-all hover:bg-surface/50 border border-transparent data-[state=open]:border-border data-[state=open]:bg-surface"
+                className="border border-white/5 bg-zinc-900/10 rounded-xl px-2 transition-all hover:bg-zinc-900/20 data-[state=open]:border-white/10 data-[state=open]:bg-zinc-900/30 overflow-hidden"
               >
-                <AccordionTrigger className="text-left py-6 px-4 hover:no-underline text-lg font-medium text-text-secondary data-[state=open]:text-text-main">
+                <AccordionTrigger className="text-left py-6 px-4 hover:no-underline text-base font-medium text-zinc-400 data-[state=open]:text-white transition-colors">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="px-4 pb-6 pt-0 text-text-muted leading-relaxed text-base">
+                <AccordionContent className="px-4 pb-6 pt-0 text-zinc-500 leading-relaxed text-sm">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

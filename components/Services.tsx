@@ -1,190 +1,91 @@
 "use client";
 
 import React from "react";
-import { Layers, Quote } from "lucide-react";
-import { motion, Variants } from "framer-motion";
-import BlurText from "./BlurText";
+import { Layers, Zap, Target, TrendingUp, Cpu, Globe } from "lucide-react";
+import { motion } from "framer-motion";
 
-// --- Types ---
-interface ReviewItem {
-  id: string;
-  quote: string;
-  name: string;
-  designation: string;
-}
-
-// --- Data ---
-const reviews: ReviewItem[] = [
+const capabilities = [
   {
-    id: "1",
-    quote:
-      "Evoc Labz completely changed how we scale. No fixed cost, no stress. We finally see real profits instead of just revenue.",
-    name: "Rohit Verma",
-    designation: "Founder, D2C Brand",
+    title: "Performance Ads",
+    desc: "Aggressive scaling across Meta, Google, and LinkedIn using proprietary math models for CAC optimization.",
+    icon: <Zap size={20} />,
   },
   {
-    id: "2",
-    quote:
-      "What I liked most is the transparency. Every order, every rupee is visible on one dashboard.",
-    name: "Ankit Sharma",
-    designation: "Co-Founder, Shopify Store",
+    title: "Conversion Engine",
+    desc: "Custom high-conversion checkout flows and A/B testing frameworks that turn clicks into confirmed orders.",
+    icon: <Target size={20} />,
   },
   {
-    id: "3",
-    quote:
-      "RTO was killing our margins earlier. After using Evoc Labz, our delivered order quality improved massively.",
-    name: "Sandeep Patel",
-    designation: "Founder, Ecommerce Brand",
+    title: "LTV Optimization",
+    desc: "Automated retention sequences and loyalty systems designed to increase customer lifetime value by up to 40%.",
+    icon: <TrendingUp size={20} />,
   },
   {
-    id: "4",
-    quote:
-      "Paying only on delivered orders makes complete sense. Evoc Labz feels more like a partner than a service provider.",
-    name: "Amit Gupta",
-    designation: "Brand Owner",
+    title: "Tech Infrastructure",
+    desc: "A unified operating system for your brand, integrating inventory, logistics, and ads into a single source of truth.",
+    icon: <Cpu size={20} />,
   },
   {
-    id: "5",
-    quote:
-      "We stopped wasting money on multiple tools. Everything is now managed from a single platform.",
-    name: "Neha Agarwal",
-    designation: "Founder, Lifestyle Brand",
+    title: "Creative Strategy",
+    desc: "Data-driven content frameworks and viral loops designed for the modern attention economy.",
+    icon: <Layers size={20} />,
   },
   {
-    id: "6",
-    quote:
-      "Finally a system that focuses on profit, not just ROAS screenshots. Evoc Labz shows the real picture.",
-    name: "Vikas Mehta",
-    designation: "D2C Entrepreneur",
-  },
-  {
-    id: "7",
-    quote:
-      "The onboarding was smooth and the team actually understands Indian ecommerce problems like COD and RTO.",
-    name: "Rahul Singh",
-    designation: "Online Seller",
-  },
-  {
-    id: "8",
-    quote:
-      "Our operations became more structured within weeks. Less chaos, better decisions.",
-    name: "Pooja Malhotra",
-    designation: "Operations Head",
-  },
-  {
-    id: "9",
-    quote:
-      "Evoc Labz helped us scale without hiring a big internal team. That saved us a lot of cost.",
-    name: "Karan Jain",
-    designation: "Founder, Growing D2C Brand",
-  },
-  {
-    id: "10",
-    quote:
-      "This is not another agency or software. It’s a complete growth system built for real ecommerce.",
-    name: "Nikhil Bansal",
-    designation: "Brand Founder",
+    title: "Global Scaling",
+    desc: "Logistics and payment infrastructure built to take your brand from local success to international dominance.",
+    icon: <Globe size={20} />,
   },
 ];
 
-// --- Animations ---
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { type: "spring", stiffness: 50, damping: 20 },
-  },
-};
-
-const badgeVariants: Variants = {
-  hidden: { opacity: 0, y: -10 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 md:py-32 bg-background relative">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* --- Header Section --- */}
-        <div className="mb-20">
-          <motion.div
-            variants={badgeVariants}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-surface border border-border text-text-secondary text-xs font-medium uppercase tracking-wider mb-6"
-          >
-            <Layers className="w-3 h-3" />
-            Client Reviews
-          </motion.div>
-
-          <div className="max-w-3xl">
-            <BlurText
-              text="WHAT OUR CLIENTS SAYS."
-              className="text-3xl md:text-5xl font-semibold text-text-main tracking-tight"
-            />
+    <section
+      id="services"
+      className="container border-x overflow-hidden max-w-7xl z-20 border-white/10 border-b mx-auto py-24 px-6 bg-[#020202]"
+    >
+      {/* Header */}
+      <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-12">
+        <div className="flex-1">
+          <div className="inline-flex items-center justify-center px-3 py-1 mb-6 border border-emerald-500/30 bg-emerald-500/10 text-emerald-200 text-[10px] font-medium tracking-widest uppercase font-mono">
+            Growth Units
           </div>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-oswald uppercase tracking-tight leading-[0.9] text-white">
+            Scale <span className="text-zinc-500">beyond</span> boundaries
+          </h2>
         </div>
+        <div className="max-w-md lg:text-right">
+          <p className="text-zinc-400 text-lg leading-relaxed">
+            A comprehensive suite of technical and strategic capabilities
+            designed for explosive D2C growth.
+          </p>
+        </div>
+      </div>
 
-        {/* --- Grid Layout --- */}
-        {/* --- Carousel Layout --- */}
-        <div className="relative w-full overflow-hidden mask-gradient-sides">
-          {/* Add a gradient mask for smooth fade in/out at edges if supported, usually requires simple mask-image in css or just gradients overlay */}
-          {/* Gradient Overlays for Fade Effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-20 pointer-events-none" />
-
+      {/* Capabilities Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border border-white/10 divide-y lg:divide-y-0 lg:divide-x divide-white/10 bg-white/1">
+        {capabilities.map((cap, i) => (
           <motion.div
-            className="flex gap-6 w-max"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{
-              repeat: Infinity,
-              ease: "linear",
-              duration: 25, // Adjust speed here
-            }}
+            key={cap.title}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className={`group p-8 md:p-10 hover:bg-white/2 transition-colors duration-300 flex flex-col items-start ${i >= 3 ? "lg:border-t border-white/10" : ""}`}
           >
-            {/* Render items twice for seamless loop */}
-            {[...reviews, ...reviews].map((review, index) => (
-              <div
-                key={`${review.id}-${index}`}
-                className="w-[300px] md:w-[350px] flex-shrink-0 group relative p-8 rounded-xl bg-surface border border-border hover:border-primary/50 transition-colors duration-300 flex flex-col justify-between"
-              >
-                <div className="relative z-10">
-                  {/* Icon Container */}
-                  <div className="w-12 h-12 rounded-lg bg-background border border-border flex items-center justify-center mb-6 text-text-secondary group-hover:text-primary transition-colors">
-                    <Quote strokeWidth={1.5} className="w-6 h-6" />
-                  </div>
-
-                  {/* Content */}
-                  <p className="text-text-muted leading-relaxed text-sm md:text-base mb-6 italic">
-                    &quot;{review.quote}&quot;
-                  </p>
-
-                  <div>
-                    <h4 className="text-lg font-semibold text-text-main">
-                      {review.name}
-                    </h4>
-                    <p className="text-xs text-text-secondary uppercase tracking-wide font-medium">
-                      {review.designation}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            <div className="w-10 h-10 border border-white/10 bg-zinc-950 flex items-center justify-center text-emerald-500 group-hover:text-emerald-400 transition-colors mb-8 shadow-inner">
+              {cap.icon}
+            </div>
+            <h3 className="text-xl font-oswald text-white uppercase tracking-wide mb-3">
+              {cap.title}
+            </h3>
+            <p className="text-sm text-zinc-500 leading-relaxed mb-8 flex-1">
+              {cap.desc}
+            </p>
+            <div className="text-[10px] font-mono text-zinc-800 uppercase tracking-widest group-hover:text-zinc-400 transition-colors">
+              Capability_{i + 1}
+            </div>
           </motion.div>
-        </div>
+        ))}
       </div>
     </section>
   );

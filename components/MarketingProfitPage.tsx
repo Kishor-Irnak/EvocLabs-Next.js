@@ -1,9 +1,17 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { motion, useInView, animate } from "framer-motion";
-import { ArrowRight, TrendingUp, Layers, Users, Zap } from "lucide-react";
-import BlurText from "./BlurText";
+import {
+  TrendingUp,
+  Layers,
+  Users,
+  Zap,
+  Briefcase,
+  Wind,
+  Compass,
+  AlertOctagon,
+} from "lucide-react";
 
 const CountUp = ({
   to,
@@ -44,229 +52,206 @@ const CountUp = ({
   }, [isInView, to, delay, duration, decimals, prefix, suffix]);
 
   return (
-    <span ref={ref} className="tabular-nums tracking-tight">
+    <span ref={ref} className="tabular-nums">
       0
     </span>
   );
 };
 
-// --- Advanced Component: Spotlight Card ---
-const SpotlightCard: React.FC<{
-  children: React.ReactNode;
-  className?: string;
-  title?: string;
-  sub?: string;
-  icon?: React.ReactNode;
-}> = ({ children, className = "", title, sub, icon }) => {
-  const divRef = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!divRef.current) return;
-    const rect = divRef.current.getBoundingClientRect();
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
-
-  return (
-    <motion.div
-      ref={divRef}
-      onMouseMove={handleMouseMove}
-      // Added p-6 for mobile, keeping md:p-8 for desktop
-      className={`relative p-6 md:p-8 rounded-3xl bg-white/5 border border-white/10 overflow-hidden group ${className}`}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      {/* The Spotlight Overlay */}
-      <div
-        className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
-        }}
-      />
-
-      {/* Content Layer */}
-      <div className="relative z-10 flex flex-col h-full">
-        {(title || icon) && (
-          <div className="mb-6 flex items-start justify-between">
-            <div>
-              {title && (
-                <h3 className="text-lg font-semibold text-white tracking-tight">
-                  {title}
-                </h3>
-              )}
-              {sub && (
-                <p className="text-sm text-white/50 mt-1 font-medium">{sub}</p>
-              )}
-            </div>
-            {icon && (
-              <div className="p-2 rounded-lg bg-white/5 border border-white/10 text-blue-400">
-                {icon}
-              </div>
-            )}
-          </div>
-        )}
-        <div className="flex-1">{children}</div>
-      </div>
-
-      {/* Border Highlight on Hover */}
-      <div
-        className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-transparent group-hover:ring-white/20 transition-all duration-300"
-        style={{ pointerEvents: "none" }}
-      />
-    </motion.div>
-  );
-};
-
-// --- Component: Dynamic Graph ---
-const GrowthGraph = () => (
-  <div className="flex items-end h-full w-full gap-1.5 pt-6 pb-2">
-    {[30, 45, 35, 60, 50, 75, 65, 85, 80, 100].map((h, i) => (
-      <motion.div
-        key={i}
-        initial={{ height: 0 }}
-        whileInView={{ height: `${h}%` }}
-        transition={{
-          delay: i * 0.05,
-          duration: 0.8,
-          type: "spring",
-          bounce: 0,
-        }}
-        className="flex-1 rounded-t-sm bg-gradient-to-t from-blue-600/20 to-blue-500 hover:to-blue-400 transition-colors duration-300 opacity-80 hover:opacity-100"
-        style={{ minHeight: "10px" }}
-      />
-    ))}
-  </div>
-);
-
-// --- Main Layout ---
 export default function MarketingProfitPages() {
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    // Adjusted padding: py-16 for mobile, py-32 for desktop
-    <div className="min-h-screen bg-background text-text-main font-sans flex flex-col items-center relative overflow-hidden py-16 md:py-32">
-      {/* Ambient Background Glows */}
-      <div className="absolute top-20 left-1/4 w-96 h-96 bg-blue-600/10 blur-[128px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-purple-600/10 blur-[128px] rounded-full pointer-events-none" />
+    <section className="container border-x overflow-hidden max-w-7xl z-20 border-white/10 border-b mx-auto pt-24 pb-0 relative bg-[#020202]">
+      {/* Background Grid Effect */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none" />
 
-      {/* Adjusted padding: px-4 for mobile */}
-      <div className="max-w-6xl w-full px-4 md:px-6 relative z-10">
-        {/* Header Section */}
-        <div className="text-center mb-16 md:mb-28">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono uppercase tracking-wider mb-6">
-            <Zap className="w-3 h-3" />
-            <span>Performance Data</span>
-          </div>
+      {/* Section Header */}
+      <div className="px-6 flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-12 relative z-10">
+        <div className="flex-1">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center justify-center px-3 py-1 mb-6 border border-orange-500/30 bg-orange-500/10 text-orange-200 text-[10px] font-medium tracking-widest uppercase"
+          >
+            Growth Diagnostics
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-oswald uppercase tracking-tight leading-[0.9] text-white"
+          >
+            The <span className="text-zinc-500">Performance</span> metrics
+          </motion.h2>
+        </div>
 
-          <div className="mb-6">
-            <BlurText
-              text="Turn Spend Into Profit."
-              // Adjusted font sizes: text-4xl mobile, text-6xl desktop
-              className="text-4xl md:text-6xl font-bold leading-tight text-white tracking-tighter"
-            />
-          </div>
-
-          <p className="text-lg text-white/60 max-w-2xl mx-auto font-light leading-relaxed">
-            We don't just run ads; we engineer growth systems.{" "}
-            <br className="hidden md:block" /> Here is the impact we have
-            generated for our partners.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col justify-end items-start lg:items-end lg:text-right max-w-md gap-6"
+        >
+          <p className="leading-relaxed lg:text-left text-lg text-zinc-400">
+            Identify the core indicators of your business velocity and scaling
+            potential.
           </p>
-        </div>
-
-        {/* --- THE BENTO GRID --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 auto-rows-[minmax(180px,auto)]">
-          {/* 1. Main Stat (Wide) */}
-          <SpotlightCard
-            className="md:col-span-2 lg:col-span-2 min-h-[220px]"
-            title="Total Ad Spend Managed"
-            icon={<Layers className="w-5 h-5" />}
-          >
-            <div className="flex flex-col h-full justify-end pb-2">
-              <div className="flex items-baseline gap-2 md:gap-4 flex-wrap">
-                <span className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tighter">
-                  <CountUp
-                    to={2.4}
-                    prefix="₹"
-                    suffix=" Cr+"
-                    decimals={1}
-                    delay={0.2}
-                  />
-                </span>
-                <div className="flex items-center gap-1.5 text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-md text-sm font-semibold border border-emerald-400/20">
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  <span>+24% ROI</span>
-                </div>
-              </div>
-              <p className="mt-4 text-white/50 text-sm font-medium">
-                Optimized across Meta, Google, and LinkedIn for maximum
-                efficiency.
-              </p>
-            </div>
-          </SpotlightCard>
-
-          {/* 2. Graph (Tall) */}
-          <SpotlightCard
-            className="lg:row-span-2 min-h-[300px]"
-            title="Growth Trajectory"
-            sub="Consistent month-over-month scaling."
-          >
-            <GrowthGraph />
-          </SpotlightCard>
-
-          {/* 3. Expertise (Compact) */}
-          <SpotlightCard
-            title="Core Expertise"
-            icon={<Zap className="w-5 h-5" />}
-          >
-            <div className="flex flex-wrap gap-2 mt-2">
-              {[
-                "PPC",
-                "Creative Strategy",
-                "CRO",
-                "Data Analytics",
-                "Attribution",
-              ].map((tag) => (
-                <span
-                  key={tag}
-                  className="text-xs bg-white/5 border border-white/10 px-3 py-1.5 rounded-full text-white/80 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-            <div className="mt-8 flex items-end gap-2">
-              <div className="text-4xl font-bold text-white tracking-tighter">
-                <CountUp to={4} suffix="+" delay={0.3} />
-              </div>
-              <div className="text-white/50 text-sm mb-1.5 font-medium">
-                Years of Excellence
-              </div>
-            </div>
-          </SpotlightCard>
-
-          {/* 4. Clients (Compact) */}
-          <SpotlightCard
-            title="Brands Scaled"
-            icon={<Users className="w-5 h-5" />}
-          >
-            <div className="h-full flex flex-col justify-end pb-2">
-              <div className="text-5xl font-bold text-white tracking-tighter">
-                <CountUp to={150} suffix="+" delay={0.4} />
-              </div>
-              <div className="text-white/50 text-sm mt-2 font-medium">
-                Global Partners across 12 industries.
-              </div>
-            </div>
-          </SpotlightCard>
-        </div>
+        </motion.div>
       </div>
-    </div>
+
+      {/* The Stats Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 border border-white/10 divide-y lg:divide-y-0 lg:divide-x divide-white/10 bg-white/1 relative z-10">
+        {/* Card 1: Ad Spend */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="group p-8 md:p-12 hover:bg-white/2 transition-colors duration-300 relative flex flex-col"
+        >
+          <div className="flex group-hover:text-orange-400 transition-colors text-orange-500 bg-zinc-900 w-12 h-12 border-white/10 border mb-8 items-center justify-center shadow-inner">
+            <Layers size={20} />
+          </div>
+          <h3 className="text-xl font-semibold text-white mb-2 uppercase tracking-wide">
+            Ad Spend Managed
+          </h3>
+          <p className="text-zinc-400 text-sm leading-relaxed mb-auto">
+            Optimized across Meta, Google, and LinkedIn with maximum efficiency.
+          </p>
+
+          <div className="mt-12 mb-6">
+            <div className="text-4xl md:text-5xl font-mono font-semibold tracking-tighter text-white">
+              <CountUp to={2.4} prefix="₹" suffix=" Cr+" decimals={1} />
+            </div>
+            <div className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mt-2">
+              Capital Efficiency
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-white/10 flex justify-between items-end">
+            <div className="flex flex-col">
+              <span className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                Status
+              </span>
+              <span className="text-xs font-mono text-emerald-400 uppercase tracking-wider">
+                +24% ROI
+              </span>
+            </div>
+            <span className="text-xs text-zinc-700 font-mono">01</span>
+          </div>
+        </motion.div>
+
+        {/* Card 2: Brands Scaled */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.1 }}
+          className="group p-8 md:p-12 hover:bg-white/2 transition-colors duration-300 relative flex flex-col"
+        >
+          <div className="flex group-hover:text-orange-400 transition-colors text-orange-500 bg-zinc-900 w-12 h-12 border-white/10 border mb-8 items-center justify-center shadow-inner">
+            <Users size={20} />
+          </div>
+          <h3 className="text-xl font-semibold text-white mb-2 uppercase tracking-wide">
+            Partner Success
+          </h3>
+          <p className="text-zinc-400 text-sm leading-relaxed mb-auto">
+            Scaling diverse direct-to-consumer brands across 12+ industry
+            verticals.
+          </p>
+
+          <div className="mt-12 mb-6">
+            <div className="text-4xl md:text-5xl font-mono font-semibold tracking-tighter text-white">
+              <CountUp to={150} suffix="+" />
+            </div>
+            <div className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mt-2">
+              Global Brands Scaled
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-white/10 flex justify-between items-end">
+            <div className="flex flex-col">
+              <span className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                Network
+              </span>
+              <span className="text-xs font-mono text-orange-400 uppercase tracking-wider">
+                Multi-Vertical
+              </span>
+            </div>
+            <span className="text-xs text-zinc-700 font-mono">02</span>
+          </div>
+        </motion.div>
+
+        {/* Card 3: Experience */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="group p-8 md:p-12 hover:bg-white/2 transition-colors duration-300 relative flex flex-col"
+        >
+          <div className="flex group-hover:text-orange-400 transition-colors text-orange-500 bg-zinc-900 w-12 h-12 border-white/10 border mb-8 items-center justify-center shadow-inner">
+            <Zap size={20} />
+          </div>
+          <h3 className="text-xl font-semibold text-white mb-2 uppercase tracking-wide">
+            Domain Expertise
+          </h3>
+          <p className="text-zinc-400 text-sm leading-relaxed mb-auto">
+            Deep technical proficiency in PPC, Creative strategy, and CRO.
+          </p>
+
+          <div className="mt-12 mb-6">
+            <div className="text-4xl md:text-5xl font-mono font-semibold tracking-tighter text-white">
+              <CountUp to={4} suffix="+" />
+            </div>
+            <div className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mt-2">
+              Years of R&D
+            </div>
+          </div>
+
+          <div className="pt-4 border-t border-white/10 flex justify-between items-end">
+            <div className="flex flex-col">
+              <span className="text-[10px] text-zinc-600 font-mono uppercase tracking-widest mb-1">
+                Capability
+              </span>
+              <span className="text-xs font-mono text-orange-400 uppercase tracking-wider">
+                Deep Tech
+              </span>
+            </div>
+            <span className="text-xs text-zinc-700 font-mono">03</span>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Result Banner */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="z-10 border-x md:px-12 py-8 flex flex-col md:flex-row gap-6 bg-emerald-500/5 w-full border-white/10 border-y mt-0 items-center justify-between"
+      >
+        <div className="flex items-center gap-6">
+          <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500">
+            <TrendingUp size={24} />
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[10px] text-emerald-500/60 font-mono uppercase tracking-widest mb-1">
+              Growth Detected
+            </span>
+            <span className="text-xl md:text-2xl font-oswald text-emerald-500 uppercase tracking-tight">
+              Total Efficiency
+            </span>
+          </div>
+        </div>
+
+        <div className="hidden md:flex items-center gap-3">
+          <div className="w-1.5 h-1.5 bg-emerald-500 animate-pulse" />
+          <span className="text-xs font-mono text-emerald-500/50 uppercase tracking-widest">
+            System Optimization Mode
+          </span>
+        </div>
+      </motion.div>
+    </section>
   );
 }
