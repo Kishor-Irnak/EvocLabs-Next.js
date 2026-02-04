@@ -13,22 +13,19 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "JERRY WAKO",
+    name: "SAHIL",
     role: "CMO",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop",
+    image: "/EvocLabs-Next.js/sahil.jpeg",
   },
   {
-    name: "STEVE MICHEALS",
+    name: "PIYUSH",
     role: "CTO",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=800&auto=format&fit=crop",
+    image: "/EvocLabs-Next.js/piyush.JPG",
   },
   {
     name: "ANNIE BADEJO",
     role: "COO",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop",
+    image: "/EvocLabs-Next.js/apple-touch-icon.png", // Using a placeholder for consistency if no COO image provided
   },
 ];
 
