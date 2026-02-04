@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,12 +29,16 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 flex justify-center">
       <div className="w-full max-w-4xl bg-black/80 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between py-2 px-2 md:pl-6 shadow-2xl">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div
-            className="w-[100px] h-[40px] bg-[url(https://cdn.midjourney.com/a3840b63-36c4-4a6b-80dd-5c41d0f4a259/0_0.png?w=800&q=80)] bg-cover bg-center rounded"
-            aria-label="Evoc Labs Logo"
-          />
+          <div className="w-[120px] h-[40px] relative">
+            <Image
+              src="/EvocLab_Logo.png"
+              alt="Evoc Labs"
+              fill
+              className="object-contain filter brightness-125"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Links */}

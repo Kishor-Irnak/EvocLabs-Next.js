@@ -144,10 +144,14 @@ const Footer: React.FC = () => {
         <div className="px-8 md:px-12 pb-24 pt-20 border-t border-white/10 flex flex-col lg:flex-row items-start lg:items-end justify-between gap-12">
           <div className="max-w-md">
             <div className="flex items-center gap-3 mb-6">
-              <div
-                className="w-[100px] h-[40px] bg-[url(https://cdn.midjourney.com/a3840b63-36c4-4a6b-80dd-5c41d0f4a259/0_0.png?w=800&q=80)] bg-cover bg-center rounded grayscale brightness-200"
-                aria-label="Evoc Labs Logo"
-              />
+              <div className="w-[120px] h-[40px] relative">
+                <Image
+                  src="/EvocLab_Logo.png"
+                  alt="Evoc Labs"
+                  fill
+                  className="object-contain filter brightness-125 grayscale"
+                />
+              </div>
               <span className="text-2xl md:text-3xl font-oswald font-semibold tracking-tighter text-white uppercase italic">
                 Profit Engine.
               </span>
