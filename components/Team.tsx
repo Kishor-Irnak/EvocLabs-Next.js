@@ -18,14 +18,14 @@ const teamMembers: TeamMember[] = [
     image: "/EvocLabs-Next.js/sahil.jpeg",
   },
   {
-    name: "PIYUSH RATHORE",
-    role: "CTO",
-    image: "/EvocLabs-Next.js/piyush.JPG",
-  },
-  {
     name: "KISHOR IRNAK",
     role: "CPO",
     image: "/EvocLabs-Next.js/kishor.jpeg",
+  },
+  {
+    name: "PIYUSH RATHORE",
+    role: "CTO",
+    image: "/EvocLabs-Next.js/piyush.JPG",
   },
 ];
 
