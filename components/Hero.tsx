@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import DashboardPreview from "./DashboardPreview";
 import Link from "next/link";
-import Script from "next/script";
+import BackgroundBeams from "./BackgroundBeams";
 
 interface HeroProps {
   onBookDemoClick?: () => void;
@@ -18,46 +18,8 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
 
   return (
     <section className="relative pt-32 pb-24 overflow-hidden bg-[#020202] min-h-screen flex flex-col items-center">
-      {/* Background (component) from Unicorn Studio */}
-      <div
-        className="aura-background-component absolute top-0 w-full -z-10 h-[800px] pointer-events-none"
-        style={{
-          maskImage:
-            "linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)",
-        }}
-      >
-        <div
-          data-us-project="bKN5upvoulAmWvInmHza"
-          className="absolute w-full h-full left-0 top-0 -z-10"
-        />
-        <Script
-          id="unicorn-studio-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              !(function () {
-                if (!window.UnicornStudio) {
-                  window.UnicornStudio = { isInitialized: !1 };
-                  var i = document.createElement("script");
-                  ((i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js"),
-                    (i.onload = function () {
-                      window.UnicornStudio.isInitialized ||
-                        (setTimeout(function() { 
-                          if(window.UnicornStudio && typeof window.UnicornStudio.init === 'function') {
-                            window.UnicornStudio.init();
-                            window.UnicornStudio.isInitialized = !0;
-                          }
-                        }, 100));
-                    }),
-                    (document.head || document.body).appendChild(i));
-                }
-              })();
-            `,
-          }}
-        />
-      </div>
+      {/* Background Beams */}
+      <BackgroundBeams />
 
       {/* Background Pattern - Diagonal Stripes */}
       <div

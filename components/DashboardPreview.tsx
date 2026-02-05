@@ -109,7 +109,7 @@ const DashboardPreview: React.FC = () => {
 
   return (
     // Removed min-h-[500px] and used aspect ratio for mobile compact view
-    <div className="w-full h-auto aspect-[16/12] md:aspect-[16/10] bg-[#0A0A0A] relative flex overflow-hidden rounded-xl border border-white/10 shadow-2xl">
+    <div className="w-full h-auto md:aspect-[16/10] bg-[#0A0A0A] relative flex overflow-hidden rounded-xl border border-white/10 shadow-2xl">
       {/* Sidebar - Minimized & Scaled down on mobile */}
       <div className="w-10 md:w-16 border-r border-white/5 flex flex-col items-center py-4 md:py-6 gap-2 md:gap-4 bg-[#0A0A0A] z-20">
         <div className="w-5 h-5 md:w-6 md:h-6 mb-2 md:mb-4 flex items-center justify-center overflow-hidden">
@@ -149,7 +149,7 @@ const DashboardPreview: React.FC = () => {
         </div>
 
         {/* Dashboard Grid */}
-        <div className="p-3 md:p-8 space-y-3 md:space-y-6 overflow-y-auto no-scrollbar z-10">
+        <div className="p-3 md:p-8 space-y-3 md:space-y-6 md:overflow-y-auto no-scrollbar z-10">
           {/* Stats Row - Forces 3 columns on mobile too */}
           <div className="grid grid-cols-3 gap-2 md:gap-4">
             <StatCard

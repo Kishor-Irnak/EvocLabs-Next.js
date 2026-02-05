@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h1>Background Beams</h1>
 
-## Getting Started
+body {
+margin: 0;
+background-color: black;
+overflow: hidden;
+display: grid;
+place-content: center;
+height: 100vh;
+}
 
-First, run the development server:
+h1 {
+position: relative;
+z-index: 2;
+font: 4vw sans-serif;
+color: white;
+}
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+h1:after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to bottom,
+rgba(0, 0, 0, 0) 0%,
+rgba(0, 0, 0, 0.95) 100%
+);
+}
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+.line {
+position: absolute;
+width: 1px;
+background-color: rgba(255, 255, 255, 0.1);
+height: 100vh;
+z-index: 1;
+}
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+.line::after {
+content: "";
+position: absolute;
+left: 0;
+width: 100%;
+height: 80px;
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+background: linear-gradient(
+to bottom,
+rgba(255, 255, 255, 0),
+rgba(0, 230, 250, 0.8)
+);
+animation: fall var(--ani-duration) var(--ani-delay) linear infinite;
+}
 
-## Learn More
+@keyframes fall {
+0% {
+top: -100px;
+}
+100% {
+top: 100%;
+}
+}
 
-To learn more about Next.js, take a look at the following resources:
+const lineCount = 20;
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+for (let i = 1; i <= lineCount; i++) {
+const line = document.createElement("div");
+line.classList.add("line");
+line.style.setProperty(
+"left",
+`${i * (100 / lineCount) + Math.random() * 5 - 5}%`
+);
+line.style.setProperty("--ani-duration", 8 + Math.random() _ 10 + "s");
+line.style.setProperty("--ani-delay", -Math.random() _ 10 + "s");
+document.body.appendChild(line);
+}
