@@ -196,7 +196,7 @@ export default function RootLayout({
           .font-instrument-serif { font-family: "Instrument Serif", serif !important; }
           
           body {
-            font-family: inherit; /* Allow classes to override */
+            font-family: "Plus Jakarta Sans", sans-serif;
           }
         `,
           }}
