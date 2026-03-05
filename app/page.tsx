@@ -5,6 +5,9 @@ import BackgroundAnimation from "@/components/BackgroundAnimation";
 // Critical components - load with ssr true but wrap in dynamic for chunking
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true });
 const Hero = dynamic(() => import("@/components/Hero"), { ssr: true });
+const ClusterFeatures = dynamic(() => import("@/components/ClusterFeatures"), {
+  ssr: true,
+});
 
 // Below the fold components - load with ssr true for SEO, but dynamic for bundle splitting
 const MarketingProfitPages = dynamic(
@@ -39,6 +42,7 @@ export default function Home() {
       <Navbar />
       <main className="relative" style={{ zIndex: 10 }}>
         <Hero />
+        <ClusterFeatures />
         <MarketingProfitPages />
         <LogoTicker />
         <Process />
