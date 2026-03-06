@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const ClusterFeatures = () => {
   return (
@@ -22,6 +23,14 @@ const ClusterFeatures = () => {
           {/* Card 1: Ads Management */}
           <div className="sticky top-[96px] z-10 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] overflow-hidden relative shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+              <Image
+                src="/assets/gfx1.jpeg"
+                alt="Ads Management"
+                fill
+                className="object-cover opacity-60 pointer-events-none"
+              />
+              {/* Gradient fade from top for text readability */}
+              <div className="absolute inset-0 bg-linear-to-b from-[#141414] via-[#141414]/70 to-transparent pointer-events-none z-0" />
               <div className="relative z-10">
                 <h3 className="text-[17px] font-medium text-[#f4f4f5] mb-2.5 tracking-tight">
                   Ads Management

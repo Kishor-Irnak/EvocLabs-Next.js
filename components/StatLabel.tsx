@@ -23,7 +23,7 @@ const StatLabel = () => {
   ];
 
   return (
-    <section className="bg-white border-b border-black/[0.08] py-16 lg:py-24">
+    <section className="bg-white border-b border-black/10 py-16 lg:py-24">
       <div className="max-w-[1150px] mx-auto px-6 lg:px-12">
         <h2 className="text-[24px] lg:text-[28px] font-medium text-[#111] mb-12 tracking-tight">
           Measurable results from day one
