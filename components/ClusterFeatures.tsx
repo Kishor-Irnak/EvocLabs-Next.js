@@ -3,6 +3,9 @@
 import React from "react";
 import Image from "next/image";
 import gfx1 from "../public/assets/gfx1.jpeg";
+import gfx2 from "../public/assets/gfx2.jpeg";
+import gfx3 from "../public/assets/gfx3.jpeg";
+import gfx4 from "../public/assets/gfx4.jpeg";
 
 const ClusterFeatures = () => {
   return (
@@ -47,7 +50,15 @@ const ClusterFeatures = () => {
           {/* Card 2: Website / Store */}
           <div className="sticky top-[112px] z-20 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
-              <div className="mb-10">
+              <Image
+                src={gfx2}
+                alt="Website / Store"
+                fill
+                className="object-cover opacity-60 pointer-events-none"
+              />
+              {/* Gradient fade from top for text readability */}
+              <div className="absolute inset-0 bg-linear-to-b from-[#141414] via-[#141414]/70 to-transparent pointer-events-none z-0" />
+              <div className="relative z-10 mb-10">
                 <h3 className="text-[17px] font-medium text-[#f4f4f5] mb-2.5 tracking-tight">
                   Website / Store
                 </h3>
@@ -62,6 +73,14 @@ const ClusterFeatures = () => {
           {/* Card 3: Logistics */}
           <div className="sticky top-[128px] z-30 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+              <Image
+                src={gfx3}
+                alt="Logistics"
+                fill
+                className="object-cover opacity-60 pointer-events-none"
+              />
+              {/* Gradient fade from top for text readability */}
+              <div className="absolute inset-0 bg-linear-to-b from-[#141414] via-[#141414]/70 to-transparent pointer-events-none z-0" />
               <div className="relative z-20 w-full">
                 <h3 className="text-[17px] font-medium text-[#f4f4f5] mb-2.5 tracking-tight">
                   Logistics
@@ -77,6 +96,14 @@ const ClusterFeatures = () => {
           {/* Card 4: The Model */}
           <div className="sticky top-[144px] z-40 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+              <Image
+                src={gfx4}
+                alt="The Model (How You Pay)"
+                fill
+                className="object-cover opacity-60 pointer-events-none"
+              />
+              {/* Gradient fade from top for text readability */}
+              <div className="absolute inset-0 bg-linear-to-b from-[#141414] via-[#141414]/70 to-transparent pointer-events-none z-0" />
               <div className="relative z-10 w-full mb-10">
                 <h3 className="text-[17px] font-medium text-[#f4f4f5] mb-2.5 tracking-tight">
                   The Model (How You Pay)
