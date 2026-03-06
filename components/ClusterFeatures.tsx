@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import gfx1 from "../public/assets/gfx1.jpeg";
 
 const ClusterFeatures = () => {
   return (
@@ -24,7 +25,7 @@ const ClusterFeatures = () => {
           <div className="sticky top-[96px] z-10 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] overflow-hidden relative shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
-                src="/assets/gfx1.jpeg"
+                src={gfx1}
                 alt="Ads Management"
                 fill
                 className="object-cover opacity-60 pointer-events-none"
