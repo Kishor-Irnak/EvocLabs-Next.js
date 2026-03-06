@@ -15,20 +15,26 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
       <div className="container border-x flex flex-col text-center max-w-7xl border-white/10 mx-auto pt-32 px-6 pb-24 items-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-zinc-300 mb-8 uppercase tracking-wider animate-pulse">
-          For High-Growth Founders
+          India's No.1 E-Commerce Lab
         </div>
 
         {/* Main Title */}
         <h1 className="text-4xl md:text-7xl lg:text-8xl bg-clip-text leading-[1.1] font-semibold text-transparent tracking-tighter bg-gradient-to-b from-white via-white to-zinc-500 max-w-5xl mx-auto mb-6">
-          Turn Strategy into
+          Start at Zero Cost
           <br />
-          <span className="italic font-playfair">Profit Engine</span>
+        </h1>
+        <h1 className="text-2xl md:text-4xl lg:text-5xl bg-clip-text leading-[1.1] font-semibold text-transparent tracking-tighter bg-gradient-to-b from-blue via-white to-zinc-500 max-w-5xl mx-auto mb-6">
+          {" "}
+          <span className="italic font-playfair">
+            4% Comissions on Deliverd Orders
+          </span>
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
-          Stop guessing. Start engineering your business growth with a proven
-          operating system.
+        <p className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          We build brands that sell themselves. You focus on growing your
+          business while we handle the strategy, design, and marketing. Pay only
+          when you start making sales.
         </p>
 
         {/* CTAs */}

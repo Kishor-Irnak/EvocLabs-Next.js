@@ -8,6 +8,9 @@ const Hero = dynamic(() => import("@/components/Hero"), { ssr: true });
 const ClusterFeatures = dynamic(() => import("@/components/ClusterFeatures"), {
   ssr: true,
 });
+const StatLabel = dynamic(() => import("@/components/StatLabel"), {
+  ssr: true,
+});
 
 // Below the fold components - load with ssr true for SEO, but dynamic for bundle splitting
 const MarketingProfitPages = dynamic(
@@ -43,6 +46,7 @@ export default function Home() {
       <main className="relative" style={{ zIndex: 10 }}>
         <Hero />
         <ClusterFeatures />
+        <StatLabel />
         <MarketingProfitPages />
         <LogoTicker />
         <Process />
