@@ -51,7 +51,7 @@ const ClusterFeatures = () => {
           <div className="sticky top-[112px] z-20 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
-                src={gfx2}
+                src={gfx3}
                 alt="Website / Store"
                 fill
                 className="object-cover opacity-60 pointer-events-none"
@@ -74,7 +74,7 @@ const ClusterFeatures = () => {
           <div className="sticky top-[128px] z-30 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
             <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
-                src={gfx3}
+                src={gfx2}
                 alt="Logistics"
                 fill
                 className="object-cover opacity-60 pointer-events-none"
