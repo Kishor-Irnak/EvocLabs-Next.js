@@ -86,9 +86,9 @@ const ClusterFeatures = () => {
                   Logistics
                 </h3>
                 <p className="text-[13px] text-[#8b8b8f] leading-[1.6] max-w-[340px] font-light">
-                  From warehouse to doorstep — we handle storage, packing, and
-                  delivery. Your customers get their orders on time, every time.
-                  Zero stress on your end.
+                  From warehouse to doorstep — connect with multiple delivery
+                  partners in one platform, fixed shipping rates, and zero RTO
+                  fees.
                 </p>
               </div>
             </div>

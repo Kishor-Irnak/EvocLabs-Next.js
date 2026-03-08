@@ -3,16 +3,28 @@ import React from "react";
 const StatLabel = () => {
   const stats = [
     {
-      value: "100%",
-      label: "managed — ads, logistics & tech",
+      value: "₹0",
+      label: "Subscription fees",
       dotColor: "bg-[#00e576]", // Vibrant green
       lineColor: "from-[#00e576]/40 to-transparent",
     },
     {
-      value: "48hrs",
-      label: "to get your store live",
+      value: "₹0",
+      label: "Website Setup & Maintenance Cost",
       dotColor: "bg-[#d838e0]", // Vibrant magenta/purple
       lineColor: "from-[#d838e0]/40 to-transparent",
+    },
+    {
+      value: "₹0",
+      label: "No Charges on RTO",
+      dotColor: "bg-[#ff6b00]", // Vibrant orange
+      lineColor: "from-[#ff6b00]/40 to-transparent",
+    },
+    {
+      value: "₹0",
+      label: "No Marketing Charges",
+      dotColor: "bg-[#ff6b00]", // Vibrant orange
+      lineColor: "from-[#ff6b00]/40 to-transparent",
     },
     {
       value: "4%",
@@ -26,12 +38,17 @@ const StatLabel = () => {
     <section className="bg-white border-b border-black/10 py-16 lg:py-24">
       <div className="max-w-[1150px] mx-auto px-6 lg:px-12">
         <h2 className="text-[24px] lg:text-[28px] font-medium text-[#111] mb-12 tracking-tight">
-          Measurable results from day one
+          No upfront cost, only success based fees
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-10 md:gap-6 lg:gap-12">
           {stats.map((stat, index) => (
-            <div key={index} className="relative pl-5 md:pl-6">
+            <div
+              key={index}
+              className={`relative pl-5 md:pl-6 md:col-span-2 ${
+                index === 3 ? "md:col-start-2" : ""
+              }`}
+            >
               {/* Vertical line with dot */}
               <div className="absolute left-0 top-1 bottom-[-10px] flex flex-col items-center">
                 <div
