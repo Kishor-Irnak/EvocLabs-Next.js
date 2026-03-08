@@ -11,6 +11,9 @@ const ClusterFeatures = dynamic(() => import("@/components/ClusterFeatures"), {
 const StatLabel = dynamic(() => import("@/components/StatLabel"), {
   ssr: true,
 });
+const ConnectedKnowledge = dynamic(() => import("@/components/ConnectedKnowledge"), {
+  ssr: true,
+});
 
 // Below the fold components - load with ssr true for SEO, but dynamic for bundle splitting
 const MarketingProfitPages = dynamic(
@@ -47,6 +50,7 @@ export default function Home() {
         <Hero />
         <ClusterFeatures />
         <StatLabel />
+        <ConnectedKnowledge />
         <MarketingProfitPages />
         <LogoTicker />
         <Process />
