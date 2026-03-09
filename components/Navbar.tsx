@@ -33,28 +33,27 @@ const Navbar: React.FC = () => {
     >
       <div className="w-full max-w-7xl flex items-center justify-between">
         {/* Left: Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center">
           <div className="w-[80px] h-[28px] relative">
             <Image
               src={logoImg}
               alt="Evoc Labs"
               fill
-              className="object-contain filter brightness-125"
+              className="object-contain object-left filter brightness-125"
               priority
             />
           </div>
-          <span className="text-white font-bold tracking-tight text-lg hidden sm:inline-block font-geist uppercase">
-            Evoc
-          </span>
-
-          {""}
-          <span
-            className="italic text-white tracking-tight text-xl font-instrument-serif"
-            style={{ fontFamily: '\"Playfair Display\", serif' }}
-          >
-            Labs
-          </span>
-          {""}
+          <div className="flex items-baseline gap-1 -ml-6">
+            <span className="text-white font-bold tracking-tight text-lg inline-block font-geist uppercase">
+              Evoc
+            </span>
+            <span
+              className="italic text-white tracking-tight text-xl font-instrument-serif"
+              style={{ fontFamily: '\"Playfair Display\", serif' }}
+            >
+              Labs
+            </span>
+          </div>
         </Link>
 
         {/* Center: Links */}
@@ -90,7 +89,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden p-2 text-zinc-400"
+            className="md:hidden p-2 -mr-2 text-zinc-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
