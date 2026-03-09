@@ -5,6 +5,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import logoImg from "@/public/EvocLab_Logo.png";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,7 @@ const Navbar: React.FC = () => {
         <Link href="/" className="flex items-center gap-2">
           <div className="w-[80px] h-[28px] relative">
             <Image
-              src="/EvocLab_Logo.png"
+              src={logoImg}
               alt="Evoc Labs"
               fill
               className="object-contain filter brightness-125"

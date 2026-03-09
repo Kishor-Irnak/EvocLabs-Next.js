@@ -1,6 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import bgImage from "@/public/bg-black-blue.jpg";
 
 // Critical components - load with ssr true but wrap in dynamic for chunking
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true });
@@ -47,7 +48,7 @@ export default function Home() {
       {/* Background Image */}
       <div className="fixed inset-0 w-full h-full z-0 bg-black">
         <Image
-          src="/bg-black-blue.jpg"
+          src={bgImage}
           alt="Background"
           fill
           className="object-cover"
