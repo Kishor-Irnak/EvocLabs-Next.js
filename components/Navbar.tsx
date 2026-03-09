@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -19,51 +19,72 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Solution", href: "/#solution" },
-    { name: "Results", href: "/#results" },
-    { name: "Process", href: "/#process" },
-    { name: "Utilities", href: "/#utilities" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "Products", href: "#", hasDropdown: true },
+    { name: "Solutions", href: "#", hasDropdown: true },
+    { name: "Resources", href: "#", hasDropdown: true },
+    { name: "About", href: "#", hasDropdown: true },
+    { name: "Pricing", href: "#", hasDropdown: false },
   ];
 
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 px-4 md:px-0 flex justify-center">
-      <div className="w-full max-w-4xl bg-black/80 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-between py-2 px-2 md:pl-6 shadow-2xl">
-        <Link href="/" className="flex items-center gap-3">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-center transition-all duration-300 ${isScrolled ? "bg-black/90 backdrop-blur-xl border-b border-white/10" : "bg-transparent"}`}
+    >
+      <div className="w-full max-w-7xl flex items-center justify-between">
+        {/* Left: Logo */}
+        <Link href="/" className="flex items-center gap-2">
           <div className="w-[80px] h-[28px] relative">
             <Image
-              src="/EvocLabs-Next.js/EvocLab_Logo.png"
+              src="/EvocLab_Logo.png"
               alt="Evoc Labs"
               fill
               className="object-contain filter brightness-125"
               priority
             />
           </div>
-          <span className="text-white font-bold tracking-tight text-lg hidden sm:inline-block font-oswald uppercase">
-            Evoc Labs
+          <span className="text-white font-bold tracking-tight text-lg hidden sm:inline-block font-geist uppercase">
+            Evoc
           </span>
+
+          {""}
+          <span
+            className="italic text-white tracking-tight text-xl font-instrument-serif"
+            style={{ fontFamily: '\"Playfair Display\", serif' }}
+          >
+            Labs
+          </span>
+          {""}
         </Link>
 
-        {/* Desktop Links */}
+        {/* Center: Links */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+              className="flex items-center gap-1 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
             >
               {link.name}
+              {link.hasDropdown && (
+                <ChevronDown size={14} className="opacity-70" />
+              )}
             </Link>
           ))}
         </div>
 
-        {/* Right Action */}
-        <div className="flex items-center gap-2">
+        {/* Right: Auth Actions */}
+        <div className="flex items-center gap-6">
+          <Link
+            href="/#login"
+            className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden sm:block"
+          >
+            Log In
+          </Link>
           <Link
             href="/book-demo"
-            className="bg-white text-black text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-zinc-200 transition-colors hidden sm:block shadow-lg shadow-white/5 active:scale-95 transition-all"
+            className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium px-5 py-2 rounded-full hidden sm:block transition-opacity duration-300 hover:opacity-90 shadow-sm"
           >
-            Get Started
+            Book a Demo
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -91,17 +112,26 @@ const Navbar: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-medium text-zinc-400 hover:text-white transition-colors"
+                  className="flex items-center justify-between text-lg font-medium text-zinc-400 hover:text-white transition-colors"
                 >
                   {link.name}
+                  {link.hasDropdown && <ChevronDown size={18} />}
                 </Link>
               ))}
+              <div className="h-px bg-white/10 my-2" />
+              <Link
+                href="/#login"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-lg font-medium text-zinc-300 hover:text-white transition-colors text-center"
+              >
+                Log In
+              </Link>
               <Link
                 href="/book-demo"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-white text-black text-center py-4 rounded-full font-semibold mt-4 active:scale-95 transition-transform"
+                className="bg-blue-600 text-white text-center py-4 rounded-full font-semibold mt-2 transition-transform"
               >
-                Get Started
+                Open Account
               </Link>
             </div>
           </motion.div>

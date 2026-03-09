@@ -3,7 +3,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import DashboardPreview from "./DashboardPreview";
 
 interface HeroProps {
   onBookDemoClick?: () => void;
@@ -12,26 +11,26 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
   return (
     <section className="relative">
-      <div className="container border-x flex flex-col text-center max-w-7xl border-white/10 mx-auto pt-32 px-6 pb-24 items-center">
-        {/* Badge */}
+      <div className="container flex flex-col text-center max-w-7xl mx-auto pt-46 px-6 pb-24 items-center">
+        {/* Badge
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-zinc-300 mb-8 uppercase tracking-wider animate-pulse">
           India's No.1 E-Commerce Lab
-        </div>
+        </div> */}
 
         {/* Main Title */}
-        <h1 className="text-4xl md:text-7xl lg:text-8xl bg-clip-text leading-[1.1] font-semibold text-transparent tracking-tighter bg-gradient-to-b from-white via-white to-zinc-500 max-w-5xl mx-auto mb-6">
-          Start at Zero Cost
-          <br />
-        </h1>
-        <h1 className="text-2xl md:text-4xl lg:text-5xl bg-clip-text leading-[1.1] font-semibold text-transparent tracking-tighter bg-gradient-to-b from-blue via-white to-zinc-500 max-w-5xl mx-auto mb-6">
-          {" "}
-          <span className="italic font-playfair">
-            4% Comissions on Deliverd Orders
-          </span>
+        <h1 className="max-w-5xl sm:text-5xl md:text-7xl text-4xl tracking-tighter font-geist mx-auto text-white mb-6">
+          Start at{" "}
+          <span
+            className="italic text-white tracking-tight font-instrument-serif"
+            style={{ fontFamily: '\"Playfair Display\", serif' }}
+          >
+            Zero
+          </span>{" "}
+          Cost, Scale Fast.
         </h1>
 
         {/* Subtitle */}
-        <p className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        <p className="text-sm md:text-base text-white max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
           We build brands that sell themselves. You focus on growing your
           business while we handle the strategy, design, and marketing. Pay only
           when you start making sales.
@@ -43,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
             href="/book-demo"
             className="inline-flex items-center gap-2 hover:bg-zinc-200 transition-colors text-sm font-semibold text-black bg-white rounded-full pt-3.5 px-6 pb-3.5"
           >
-            Take the 5-Minute Diagnostic
+            Book a Free Demo
             <ArrowRight size={16} />
           </Link>
           <Link
@@ -55,26 +54,8 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
         </div>
 
         {/* Trust Anchor */}
-        <div className="text-xs font-medium text-zinc-500 tracking-wide mb-20">
-          29 years R&D • 7M+ decisions analyzed
-        </div>
-
-        {/* Dashboard Preview */}
-        <div className="relative w-full max-w-6xl rounded-t-2xl border-t border-x border-white/10 bg-[#0a0a0a] shadow-[0_-20px_50px_-12px_rgba(255,255,255,0.05)] overflow-hidden mb-[-1px]">
-          {/* Header Bar */}
-          <div className="h-10 border-b border-white/5 flex items-center px-4 gap-2 bg-white/[0.02]">
-            <div className="flex gap-1.5">
-              <div className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/20 border border-[#FF5F56]/50" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/20 border border-[#FFBD2E]/50" />
-              <div className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/20 border border-[#27C93F]/50" />
-            </div>
-          </div>
-
-          <div className="p-1">
-            <div className="bg-[#050505] rounded-t-lg overflow-hidden border border-white/5">
-              <DashboardPreview />
-            </div>
-          </div>
+        <div className="text-xs font-medium text-white tracking-wide mb-20">
+          4Cr+ Ad Spend • 250+ Brands Scaled
         </div>
       </div>
     </section>

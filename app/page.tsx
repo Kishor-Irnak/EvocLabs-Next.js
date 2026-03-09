@@ -1,6 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import BackgroundAnimation from "@/components/BackgroundAnimation";
+import Image from "next/image";
 
 // Critical components - load with ssr true but wrap in dynamic for chunking
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true });
@@ -43,8 +43,18 @@ const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 export default function Home() {
   return (
-    <div className="bg-background min-h-screen text-text-main font-sans selection:bg-primary/30 selection:text-primary-hover relative">
-      <BackgroundAnimation />
+    <div className="min-h-screen text-text-main font-sans selection:bg-primary/30 selection:text-primary-hover relative overflow-x-hidden">
+      {/* Background Image */}
+      <div className="fixed inset-0 w-full h-full z-0 bg-black">
+        <Image
+          src="/bg-black-blue.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+      
       <Navbar />
       <main className="relative" style={{ zIndex: 10 }}>
         <Hero />

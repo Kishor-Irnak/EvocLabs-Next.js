@@ -13,9 +13,6 @@ const ClusterFeatures = () => {
       <div className="max-w-[1150px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-14 lg:mb-20">
-          <p className="text-[9px] sm:text-[10px] font-mono tracking-[0.15em] text-[#a1a1aa] uppercase mb-5 font-semibold">
-            Just 4% when orders come in.
-          </p>
           <h2 className="text-[32px] sm:text-5xl md:text-[56px] lg:text-[64px] tracking-[-0.03em] font-medium max-w-[800px] leading-[1.05] text-[#fafafa]">
             Grow First. Pay Later.
           </h2>
@@ -25,8 +22,8 @@ const ClusterFeatures = () => {
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-5 lg:gap-2 pb-12 lg:pb-0">
           {/* Card 1: Ads Management */}
-          <div className="sticky top-[96px] z-10 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
-            <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] overflow-hidden relative shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+          <div className="sticky top-[96px] z-10 bg-[#0a0a0a] border border-white/[0.08] rounded-[14px] p-1 lg:static">
+            <div className="bg-[#141414] border border-white/[0.08] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] overflow-hidden relative shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
                 src={gfx1}
                 alt="Ads Management"
@@ -48,8 +45,8 @@ const ClusterFeatures = () => {
             </div>
           </div>
           {/* Card 2: Website / Store */}
-          <div className="sticky top-[112px] z-20 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
-            <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+          <div className="sticky top-[112px] z-20 bg-[#0a0a0a] border border-white/[0.08] rounded-[14px] p-1 lg:static">
+            <div className="bg-[#141414] border border-white/[0.08] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
                 src={gfx3}
                 alt="Website / Store"
@@ -71,8 +68,8 @@ const ClusterFeatures = () => {
             </div>
           </div>
           {/* Card 3: Logistics */}
-          <div className="sticky top-[128px] z-30 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
-            <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+          <div className="sticky top-[128px] z-30 bg-[#0a0a0a] border border-white/[0.08] rounded-[14px] p-1 lg:static">
+            <div className="bg-[#141414] border border-white/[0.08] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
                 src={gfx2}
                 alt="Logistics"
@@ -94,8 +91,8 @@ const ClusterFeatures = () => {
             </div>
           </div>
           {/* Card 4: The Model */}
-          <div className="sticky top-[144px] z-40 bg-[#0a0a0a] border border-white/[0.06] rounded-[14px] p-1 lg:static lg:p-0 lg:bg-transparent lg:border-none">
-            <div className="bg-[#141414] border border-white/[0.06] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
+          <div className="sticky top-[144px] z-40 bg-[#0a0a0a] border border-white/[0.08] rounded-[14px] p-1 lg:static">
+            <div className="bg-[#141414] border border-white/[0.08] rounded-[12px] p-8 lg:p-10 flex flex-col min-h-[420px] lg:h-[480px] relative overflow-hidden shadow-[0_-10px_30px_-5px_rgba(0,0,0,0.5)] transition-all duration-300">
               <Image
                 src={gfx4}
                 alt="The Model (How You Pay)"

@@ -17,14 +17,14 @@ const StatLabel = () => {
     {
       value: "₹0",
       label: "No Charges on RTO",
-      dotColor: "bg-[#ff6b00]", // Vibrant orange
-      lineColor: "from-[#ff6b00]/40 to-transparent",
+      dotColor: "bg-[#00c2ff]", // Vibrant cyan
+      lineColor: "from-[#00c2ff]/40 to-transparent",
     },
     {
       value: "₹0",
       label: "No Marketing Charges",
-      dotColor: "bg-[#ff6b00]", // Vibrant orange
-      lineColor: "from-[#ff6b00]/40 to-transparent",
+      dotColor: "bg-[#3b82f6]", // Vibrant blue
+      lineColor: "from-[#3b82f6]/40 to-transparent",
     },
     {
       value: "4%",
