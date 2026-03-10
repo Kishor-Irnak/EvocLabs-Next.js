@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { FaPaperPlane } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -29,12 +30,16 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-center transition-all duration-300 ${isScrolled ? "bg-black/90 backdrop-blur-xl border-b border-white/10" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-center transition-all duration-500 ${
+        isScrolled
+          ? "bg-zinc-950 border-b border-white/10 shadow-xl"
+          : "bg-transparent"
+      }`}
     >
       <div className="w-full max-w-7xl flex items-center justify-between">
         {/* Left: Logo */}
         <Link href="/" className="flex items-center">
-          <div className="w-[80px] h-[28px] relative">
+          <div className="w-8 h-[28px] relative">
             <Image
               src={logoImg}
               alt="Evoc Labs"
@@ -43,7 +48,10 @@ const Navbar: React.FC = () => {
               priority
             />
           </div>
-          <div className="flex items-baseline gap-1 -ml-6">
+          <div
+            className="flex items-baseline gap-1"
+            style={{ marginLeft: "5px" }}
+          >
             <span className="text-white font-bold tracking-tight text-lg inline-block font-geist uppercase">
               Evoc
             </span>
@@ -82,9 +90,15 @@ const Navbar: React.FC = () => {
           </Link>
           <Link
             href="/book-demo"
-            className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium px-5 py-2 rounded-full hidden sm:block transition-opacity duration-300 hover:opacity-90 shadow-sm"
+            className="group bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
           >
-            Book a Demo
+            <span>Book a Demo</span>
+            <div className="transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-12">
+              <FaPaperPlane
+                size={12}
+                className="rotate-12 transition-colors duration-300 group-hover:text-white"
+              />
+            </div>
           </Link>
 
           {/* Mobile Menu Toggle */}
@@ -104,7 +118,7 @@ const Navbar: React.FC = () => {
             initial={{ opacity: 0, scale: 0.95, y: -10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
-            className="absolute top-20 left-4 right-4 bg-black/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 md:hidden z-40"
+            className="absolute top-20 left-4 right-4 bg-zinc-900 border border-white/10 rounded-2xl p-6 md:hidden z-40 shadow-2xl"
           >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
@@ -129,9 +143,15 @@ const Navbar: React.FC = () => {
               <Link
                 href="/book-demo"
                 onClick={() => setIsMenuOpen(false)}
-                className="bg-blue-600 text-white text-center py-4 rounded-full font-semibold mt-2 transition-transform"
+                className="group bg-blue-600 text-white flex items-center justify-center gap-3 py-4 rounded-full font-semibold mt-2 transition-all"
               >
-                Open Account
+                <span>Book a Demo</span>
+                <div className="transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-12">
+                  <FaPaperPlane
+                    size={16}
+                    className="rotate-12 group-hover:text-white"
+                  />
+                </div>
               </Link>
             </div>
           </motion.div>
