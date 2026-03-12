@@ -2,10 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
-import gfx1 from "../public/assets/gfx1.jpeg";
-import gfx2 from "../public/assets/gfx2.jpeg";
-import gfx3 from "../public/assets/gfx3.jpeg";
-import gfx4 from "../public/assets/gfx4.jpeg";
+import gfx1 from "../public/assets/feature-1.jpg";
+import gfx2 from "../public/assets/feature-2.jpg";
+import gfx3 from "../public/assets/feature-3.jpg";
+import gfx4 from "../public/assets/feature-4.jpg";
 
 const ClusterFeatures = () => {
   return (

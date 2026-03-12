@@ -1,5 +1,5 @@
 import Image from "next/image";
-import bgImage from "../public/assets/assets2.png";
+import bgImage from "../public/assets/problem-bg.png";
 
 export default function ProblemStatement() {
   return (
