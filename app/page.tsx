@@ -1,8 +1,8 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import bgImage from "@/public/bg-black-blue.png";
-import bgDashboardBase from "@/public/bg-black-blue2.png";
+import bgImage from "../public/bg-black-blue.png";
+import bgDashboardBase from "../public/bg-black-blue2.png";
 
 // Critical components - load with ssr true but wrap in dynamic for chunking
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true });

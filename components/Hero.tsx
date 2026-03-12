@@ -5,7 +5,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import Link from "next/link";
 
 import Image from "next/image";
-import dashboardImg from "@/public/assets/dashboard.jpg";
+import dashboardImg from "../public/assets/dashboard.jpg";
 
 interface HeroProps {
   onBookDemoClick?: () => void;

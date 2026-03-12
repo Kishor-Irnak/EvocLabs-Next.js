@@ -5,7 +5,7 @@ import { Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import logoImg from "@/public/EvocLab_Logo.png";
+import logoImg from "../public/EvocLab_Logo.png";
 
 const Footer: React.FC = () => {
   return (

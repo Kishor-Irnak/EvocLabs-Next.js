@@ -6,7 +6,7 @@ import { FaPaperPlane } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import logoImg from "@/public/EvocLab_Logo.png";
+import logoImg from "../public/EvocLab_Logo.png";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
           </Link>
           <Link
             href="/book-demo"
-            className="group bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            className="group bg-linear-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
           >
             <span>Book a Demo</span>
             <div className="transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-12">
