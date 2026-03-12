@@ -5,6 +5,8 @@ import { Instagram, Linkedin, Twitter, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import logoImg from "@/public/EvocLab_Logo.png";
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#020202] border-t border-white/10 mt-0">
@@ -146,7 +148,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="w-[100px] h-[34px] relative">
                 <Image
-                  src="/EvocLabs-Next.js/EvocLab_Logo.png"
+                  src={logoImg}
                   alt="Evoc Labs"
                   fill
                   className="object-contain filter brightness-125 grayscale"

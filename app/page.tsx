@@ -19,31 +19,14 @@ const ConnectedKnowledge = dynamic(
     ssr: true,
   },
 );
+const ProblemStatement = dynamic(
+  () => import("@/components/problem-statement"),
+  {
+    ssr: true,
+  },
+);
 
 // Below the fold components - load with ssr true for SEO, but dynamic for bundle splitting
-const MarketingProfitPages = dynamic(
-  () => import("@/components/MarketingProfitPage"),
-  { ssr: true },
-);
-const LogoTicker = dynamic(() => import("@/components/LogoTicker"), {
-  ssr: true,
-});
-const Process = dynamic(() => import("@/components/Process"), { ssr: true });
-const Testimonials = dynamic(() => import("@/components/Testimonials"), {
-  ssr: true,
-});
-const Results = dynamic(() => import("@/components/Results"), { ssr: true });
-const WhyChooseUs = dynamic(() => import("@/components/WhyChooseUs"), {
-  ssr: true,
-});
-const TrackingSection = dynamic(() => import("@/components/TrackingSection"), {
-  ssr: true,
-});
-const Services = dynamic(() => import("@/components/Services"), { ssr: true });
-const Founder = dynamic(() => import("@/components/Founder"), { ssr: true });
-const Team = dynamic(() => import("@/components/Team"), { ssr: true });
-const FAQ = dynamic(() => import("@/components/FAQ"), { ssr: true });
-const Contact = dynamic(() => import("@/components/Contact"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: true });
 
 export default function Home() {
@@ -76,6 +59,7 @@ export default function Home() {
         <ClusterFeatures />
         <StatLabel />
         <ConnectedKnowledge />
+        <ProblemStatement />
       </main>
       <div className="relative" style={{ zIndex: 10 }}>
         <Footer />

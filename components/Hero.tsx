@@ -4,6 +4,9 @@ import React from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import Link from "next/link";
 
+import Image from "next/image";
+import dashboardImg from "@/public/assets/dashboard.jpg";
+
 interface HeroProps {
   onBookDemoClick?: () => void;
 }
@@ -72,12 +75,11 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
         <div className="relative w-full max-w-5xl mx-auto mt-8 group z-10">
           <div className="absolute -inset-1 bg-linear-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition duration-1000"></div>
           <div className="relative bg-white rounded-xl border border-white overflow-hidden shadow-2xl">
-            <img
-              src="/assets/Dashboard.JPG"
+            <Image
+              src={dashboardImg}
               alt="Dashboard Preview"
-              width={1200}
-              height={675}
               className="w-full h-auto object-cover"
+              priority
             />
           </div>
         </div>
