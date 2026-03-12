@@ -56,10 +56,11 @@ export default function Home() {
       <Navbar />
       <main className="relative" style={{ zIndex: 10 }}>
         <Hero />
-        <ClusterFeatures />
         <StatLabel />
-        <ConnectedKnowledge />
         <ProblemStatement />
+        <ClusterFeatures />
+
+        <ConnectedKnowledge />
       </main>
       <div className="relative" style={{ zIndex: 10 }}>
         <Footer />
