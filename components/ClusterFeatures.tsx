@@ -38,8 +38,7 @@ const ClusterFeatures = () => {
                   </h3>
                   <p className="text-[13px] text-[#8b8b8f] leading-[1.6] max-w-[340px] font-light">
                     Tell us your product. We set up, run, and optimize your ads
-                    on Meta & Google — no budget wasted, no guesswork. You focus
-                    on your product, we handle the clicks.
+                    on Meta & Google — no budget wasted, no guesswork.
                   </p>
                 </div>
               </div>
