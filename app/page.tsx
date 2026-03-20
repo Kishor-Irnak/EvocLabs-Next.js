@@ -4,6 +4,7 @@ import RealAdvisor from "@/components/RealAdvisor";
 import WhyChoosUs from "@/components/WhyChoosUs";
 import { LogoCloud } from "@/components/PartnersLogo";
 import HeroSection from "@/components/HeroSection";
+import HowItWorksSteps from "@/components/HowItWorksSteps";
 
 // Critical components - load with ssr true but wrap in dynamic for chunking
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true });
@@ -43,6 +44,7 @@ export default function Home() {
         <StatLabel />
         <RealAdvisor />
         <ClusterFeatures />
+        <HowItWorksSteps />
         <WhyChoosUs />
         <HeroSection />
       </main>

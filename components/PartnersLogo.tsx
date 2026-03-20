@@ -22,24 +22,24 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
         Our Official Partners
       </h2>
 
-      <div className="relative w-full grid grid-cols-2 border-x md:grid-cols-4">
-        <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t" />
+      <div className="relative w-full grid grid-cols-2 border-x border-zinc-800 md:grid-cols-4">
+        <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t border-zinc-800" />
 
         <LogoCard
-          className="relative border-r border-b bg-[#08070b]/50"
+          className="relative border-r border-b border-zinc-800 bg-[#08070b]/50"
           logo={{
             src: "https://svgl.app/library/nvidia-wordmark-light.svg",
             alt: "Nvidia Logo",
           }}
         >
           <PlusIcon
-            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
+            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 text-zinc-700"
             strokeWidth={1}
           />
         </LogoCard>
 
         <LogoCard
-          className="border-b md:border-r"
+          className="border-b border-zinc-800 md:border-r"
           logo={{
             src: "https://svgl.app/library/supabase_wordmark_light.svg",
             alt: "Supabase Logo",
@@ -47,24 +47,24 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
         />
 
         <LogoCard
-          className="relative border-r border-b md:bg-[#08070b]/50"
+          className="relative border-r border-b border-zinc-800 md:bg-[#08070b]/50"
           logo={{
             src: "https://svgl.app/library/github_wordmark_light.svg",
             alt: "GitHub Logo",
           }}
         >
           <PlusIcon
-            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6"
+            className="-right-[12.5px] -bottom-[12.5px] absolute z-10 size-6 text-zinc-700"
             strokeWidth={1}
           />
           <PlusIcon
-            className="-bottom-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 md:block"
+            className="-bottom-[12.5px] -left-[12.5px] absolute z-10 hidden size-6 text-zinc-700 md:block"
             strokeWidth={1}
           />
         </LogoCard>
 
         <LogoCard
-          className="relative border-b bg-[#08070b]/50 md:bg-[#08070b]"
+          className="relative border-b border-zinc-800 bg-[#08070b]/50 md:bg-[#08070b]"
           logo={{
             src: "https://svgl.app/library/openai_wordmark_light.svg",
             alt: "OpenAI Logo",
@@ -72,20 +72,20 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
         />
 
         <LogoCard
-          className="relative border-r border-b bg-[#08070b]/50 md:border-b-0 md:bg-[#08070b]"
+          className="relative border-r border-b border-zinc-800 bg-[#08070b]/50 md:border-b-0 md:bg-[#08070b]"
           logo={{
             src: "https://svgl.app/library/turso-wordmark-light.svg",
             alt: "Turso Logo",
           }}
         >
           <PlusIcon
-            className="-right-[12.5px] -bottom-[12.5px] md:-left-[12.5px] absolute z-10 size-6 md:hidden"
+            className="-right-[12.5px] -bottom-[12.5px] md:-left-[12.5px] absolute z-10 size-6 text-zinc-700 md:hidden"
             strokeWidth={1}
           />
         </LogoCard>
 
         <LogoCard
-          className="border-b bg-[#08070b] md:border-r md:border-b-0 md:bg-[#08070b]/50"
+          className="border-b border-zinc-800 bg-[#08070b] md:border-r md:border-b-0 md:bg-[#08070b]/50"
           logo={{
             src: "https://svgl.app/library/clerk-wordmark-light.svg",
             alt: "Clerk Logo",
@@ -93,7 +93,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
         />
 
         <LogoCard
-          className="border-r"
+          className="border-r border-zinc-800"
           logo={{
             src: "https://svgl.app/library/claude-ai-wordmark-icon_light.svg",
             alt: "Claude AI Logo",
@@ -108,7 +108,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
           }}
         />
 
-        <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b" />
+        <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b border-zinc-800" />
       </div>
     </div>
   );
@@ -129,7 +129,7 @@ function LogoCard({ logo, className, children, ...props }: LogoCardProps) {
     >
       <img
         alt={logo.alt}
-        className="pointer-events-none h-4 select-none md:h-5 dark:brightness-0 dark:invert"
+        className="pointer-events-none h-4 select-none md:h-5 brightness-0 invert"
         height={logo.height || "auto"}
         src={logo.src}
         width={logo.width || "auto"}
