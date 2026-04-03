@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
 
         {/* Dashboard Section Image */}
         <div className="relative w-full max-w-5xl mx-auto mt-8 group z-10">
-          <div className="relative bg-[#08070b] rounded-xl border border-white/[0.06] overflow-hidden shadow-2xl">
+          <div className="relative bg-[#08070b] rounded-xl border border-white/6 overflow-hidden shadow-2xl">
             <Image
               src={dashboardImg}
               alt="Dashboard Preview"

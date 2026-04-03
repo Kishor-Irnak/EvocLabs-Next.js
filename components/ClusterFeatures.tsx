@@ -9,7 +9,7 @@ import gfx4 from "../public/assets/feature-4.jpg";
 
 const ClusterFeatures = () => {
   return (
-    <section className="bg-[#08070b] text-[#f7f8f8] py-20 lg:py-32 font-sans border-b border-white/[0.06]">
+    <section id="services" className="bg-[#08070b] text-[#f7f8f8] py-20 lg:py-32 font-sans border-b border-white/6">
       <div className="max-w-[1150px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="mb-14 lg:mb-20">

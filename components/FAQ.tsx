@@ -12,42 +12,53 @@ interface FAQItem {
 const faqs: FAQItem[] = [
   {
     id: 1,
-    question: "Chamber reached do he nothing be?",
+    question: "What is Evoc Labz?",
     answer:
-      "Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.",
+      "Evoc Labz is a performance-driven eCommerce SaaS platform that helps brands grow profitably by managing checkout, orders, ads, operations, and insights from one dashboard.",
   },
   {
     id: 2,
-    question: "Stuff sight equal of my woody?",
+    question: "What pricing model does Evoc Labz follow?",
     answer:
-      "Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.",
+      "No subscription. No service fee. Only 4% commission on delivered orders. Zero charges on RTO or failed deliveries.",
   },
   {
     id: 3,
-    question: "At by pleasure of children be?",
+    question: "What kind of brands can use Evoc Labz?",
     answer:
-      "Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.",
+      "Evoc Labz is built for: D2C brands, COD-heavy businesses, Dropshipping & hybrid brands, Shopify-based stores, and brands looking to scale profitably.",
   },
   {
     id: 4,
-    question: "Amounted repeated as believed in confined?",
+    question: "Does Evoc Labz integrate with Shopify?",
+    answer: "Yes. Evoc Labz integrates seamlessly with Shopify and related tools.",
+  },
+  {
+    id: 5,
+    question: "Will Evoc Labz help reduce RTO?",
     answer:
-      "Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.",
+      "Yes. Our systems are built to reduce fake orders, improve order confirmation, and optimize COD performance.",
+  },
+  {
+    id: 6,
+    question: "Is Evoc Labz suitable for new brands?",
+    answer:
+      "Yes. It's especially useful for new brands that want to grow without burning money on fixed costs.",
   },
 ];
 
 export default function FAQ() {
-  // Defaulting to 2 to match the expanded state in your reference image
-  const [openId, setOpenId] = useState<number | null>(2);
+  // Defaulting to 1 to match the expanded state for the first question
+  const [openId, setOpenId] = useState<number | null>(1);
 
   const toggleAccordion = (id: number) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-[#08070b] overflow-hidden flex items-center justify-center py-12 md:py-20 font-sans text-white">
+    <section id="faq" className="relative min-h-screen w-full bg-[#08070b] overflow-hidden flex items-center justify-center py-12 md:py-20 font-sans text-white">
       {/* Background Graphic 1: Blue Donut (Bottom Left) */}
-      <div className="absolute -bottom-48 -left-48 w-[400px] h-[400px] md:w-[500px] md:h-[500px] border-[60px] border-[#2563eb] rounded-full opacity-90 pointer-events-none" />
+      <div className="absolute -bottom-48 -left-48 w-[400px] h-[400px] md:w-[500px] md:h-[500px] border-60 border-[#2563eb] rounded-full opacity-90 pointer-events-none" />
 
       {/* Background Graphic 2: Squiggly Line (Top Right) */}
       <svg
@@ -98,7 +109,7 @@ export default function FAQ() {
                 >
                   {/* Icon */}
                   <div
-                    className={`mt-0.5 flex-shrink-0 transition-colors duration-300 ${isOpen ? "" : "opacity-70"}`}
+                    className={`mt-0.5 shrink-0 transition-colors duration-300 ${isOpen ? "" : "opacity-70"}`}
                   >
                     {isOpen ? (
                       <Minus

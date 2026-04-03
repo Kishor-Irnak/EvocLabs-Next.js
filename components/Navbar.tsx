@@ -21,18 +21,19 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Products", href: "#", hasDropdown: true },
-    { name: "Solutions", href: "#", hasDropdown: true },
-    { name: "Resources", href: "#", hasDropdown: true },
-    { name: "About", href: "#", hasDropdown: true },
-    { name: "Pricing", href: "#", hasDropdown: false },
+    { name: "Services", href: "/#services", hasDropdown: false },
+    { name: "How It Works", href: "/#how-it-works", hasDropdown: false },
+    { name: "Testimonials", href: "/#testimonials", hasDropdown: false },
+    { name: "About", href: "/#about", hasDropdown: false },
+    { name: "FAQ", href: "/#faq", hasDropdown: false },
+    { name: "Blogs", href: "/blogs", hasDropdown: false },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-center transition-all duration-500 ${
         isScrolled
-          ? "bg-[#08070b]/95 backdrop-blur-md border-b border-white/[0.06]"
+          ? "bg-[#08070b]/95 backdrop-blur-md border-b border-white/6"
           : "bg-transparent"
       }`}
     >

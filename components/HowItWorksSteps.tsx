@@ -24,7 +24,7 @@ export default function HowItWorksSteps() {
   ];
 
   return (
-    <section className="bg-white text-black py-20 px-6 md:px-12 lg:px-24 font-sans">
+    <section id="how-it-works" className="bg-white text-black py-20 px-6 md:px-12 lg:px-24 font-sans">
       <div className="max-w-7xl mx-auto rounded-2xl p-8 md:p-12">
         {/* Header Section */}
         <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-16 gap-8">
@@ -66,7 +66,7 @@ export default function HowItWorksSteps() {
               className="flex flex-col p-6 lg:p-8 border-r border-b border-zinc-200 hover:bg-zinc-50 transition-colors duration-300"
             >
               {/* Image Section */}
-              <div className="w-full aspect-[4/3] relative rounded-md mb-8 overflow-hidden border border-zinc-100 bg-zinc-50/50">
+              <div className="w-full aspect-4/3 relative rounded-md mb-8 overflow-hidden border border-zinc-100 bg-zinc-50/50">
                 <Image
                   src={step.image}
                   alt={step.title}

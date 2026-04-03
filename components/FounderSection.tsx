@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FounderSection() {
   return (
-    <section className="flex flex-col md:flex-row w-full min-h-[100dvh] bg-[#0c121e] text-white font-sans">
+    <section id="about" className="flex flex-col md:flex-row w-full min-h-dvh bg-[#0c121e] text-white font-sans">
       {/* Inline style used here to ensure fonts load properly in standalone preview.
         In a real Next.js app, you'd configure these in your layout.tsx using next/font/google.
       */}
@@ -25,18 +25,19 @@ export default function FounderSection() {
           </div>
 
           {/* Main Heading/Quote */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-serif-custom font-medium leading-[1.3] md:leading-[1.2] tracking-wide mb-6 text-slate-50">
-            Exceptional legal service, exceeded expectations, highly recommend
-            their expertise.
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[2.2rem] font-serif-custom font-medium leading-[1.3] md:leading-[1.2] tracking-wide mb-6 text-slate-50">
+            Building a D2C brand shouldn’t mean juggling tools and burning cash — it should scale with results from day one.
           </h2>
 
           {/* Paragraph */}
-          <p className="text-slate-400 text-sm md:text-base leading-[1.8] mb-8 md:mb-10 max-w-lg font-light tracking-wide">
-            Working with Josh and their team was a game-changer for our
-            business. Their exceptional legal service exceeded our expectations
-            in every aspect. We highly recommend their expertise to anyone
-            seeking top-notch legal representation.
-          </p>
+          <div className="text-slate-400 text-sm md:text-base leading-[1.8] mb-8 md:mb-10 max-w-lg font-light tracking-wide space-y-4">
+            <p>
+              With over 4 years of hands-on experience managing ₹2Cr+ in ad spend, we've identified the specific patterns that separate scaling brands from stagnant ones.
+            </p>
+            <p>
+              There is no room for vanity metrics or "fluff" campaigns here. Our approach combines aggressive creative testing with conservative financial modeling.
+            </p>
+          </div>
 
           {/* Star Rating */}
           <div className="flex gap-1.5 mb-4">
@@ -68,7 +69,7 @@ export default function FounderSection() {
         />
 
         {/* Subtle Dark Gradient Overlay for better contrast on the right side if needed */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:from-black/40 md:via-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent md:from-black/40 md:via-transparent"></div>
 
         {/* Glassmorphism Info Card */}
         <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-auto md:bottom-12 md:left-12 bg-white/5 backdrop-blur-md border border-white/10 p-5 md:p-6 sm:max-w-[320px]">

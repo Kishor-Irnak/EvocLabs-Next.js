@@ -86,7 +86,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="bg-[#08070b] py-20 lg:py-32 border-b border-white/[0.06] overflow-hidden">
+    <section id="benefits" className="bg-[#08070b] py-20 lg:py-32 border-b border-white/6 overflow-hidden">
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -102,7 +102,7 @@ export default function WhyChooseUs() {
             {/* Left Button */}
             <button
               onClick={() => scroll("left")}
-              className="w-10 h-10 rounded-full border border-white/[0.08] flex items-center justify-center text-[#8a8f98] hover:text-[#f7f8f8] hover:border-white/30 transition-colors"
+              className="w-10 h-10 rounded-full border border-white/8 flex items-center justify-center text-[#8a8f98] hover:text-[#f7f8f8] hover:border-white/30 transition-colors"
               aria-label="Scroll left"
             >
               <svg
@@ -121,7 +121,7 @@ export default function WhyChooseUs() {
             {/* Right Button */}
             <button
               onClick={() => scroll("right")}
-              className="w-10 h-10 rounded-full border border-white/[0.08] flex items-center justify-center text-[#8a8f98] hover:text-[#f7f8f8] hover:border-white/30 transition-colors"
+              className="w-10 h-10 rounded-full border border-white/8 flex items-center justify-center text-[#8a8f98] hover:text-[#f7f8f8] hover:border-white/30 transition-colors"
               aria-label="Scroll right"
             >
               <svg
@@ -149,7 +149,7 @@ export default function WhyChooseUs() {
           {featureData.map((data, index) => (
             <div
               key={index}
-              className="w-[85vw] shrink-0 snap-center md:w-full md:shrink-1"
+              className="w-[85vw] shrink-0 snap-center md:w-full md:shrink"
             >
               <FeatureCard {...data} />
             </div>
@@ -181,10 +181,10 @@ interface FeatureCardProps {
 function FeatureCard({ title, description, gradient }: FeatureCardProps) {
   return (
     <div
-      className={`group relative h-[380px] w-full rounded-2xl overflow-hidden border border-white/[0.08] hover:border-white/20 transition-all duration-500 ${gradient}`}
+      className={`group relative h-[380px] w-full rounded-2xl overflow-hidden border border-white/8 hover:border-white/20 transition-all duration-500 ${gradient}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80" />
-      <button className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/[0.1] backdrop-blur-md border border-white/[0.08] flex items-center justify-center text-white/70 hover:text-white hover:bg-white/[0.2] transition-colors z-10">
+      <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-80" />
+      <button className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 backdrop-blur-md border border-white/8 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/20 transition-colors z-10">
         <Plus size={16} strokeWidth={1.5} />
       </button>
       <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col justify-end">

@@ -108,7 +108,7 @@ export function LogoCloud({ className, ...props }: LogoCloudProps) {
           }}
         />
 
-        <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border-b border-zinc-800" />
+        <div className="-translate-x-1/2 -bottom-px pointer-events-none absolute left-1/2 w-screen border border-zinc-800" />
       </div>
     </div>
   );
