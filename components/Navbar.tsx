@@ -53,14 +53,14 @@ const Navbar: React.FC = () => {
             className="flex items-baseline gap-1"
             style={{ marginLeft: "5px" }}
           >
-            <span className="text-white font-bold tracking-tight text-lg inline-block font-geist uppercase">
-              Evoc
+            <span className="text-white font-bold tracking-tight text-lg inline-block font-geist">
+              Web
             </span>
             <span
               className="italic text-white tracking-tight text-xl font-instrument-serif"
               style={{ fontFamily: '\"Playfair Display\", serif' }}
             >
-              Labs
+              Mines
             </span>
           </div>
         </Link>
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
           </Link>
           <Link
             href="/book-demo"
-            className="group bg-linear-to-r from-blue-600 to-cyan-500 text-white text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            className="group bg-[#ff4646] text-white text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
           >
             <span>Book a Demo</span>
             <div className="transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-12">
@@ -133,14 +133,7 @@ const Navbar: React.FC = () => {
                   {link.hasDropdown && <ChevronDown size={18} />}
                 </Link>
               ))}
-              <div className="h-px bg-white/10 my-2" />
-              <Link
-                href="/#login"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-lg font-medium text-zinc-300 hover:text-white transition-colors text-center"
-              >
-                Log In
-              </Link>
+
               <Link
                 href="/book-demo"
                 onClick={() => setIsMenuOpen(false)}

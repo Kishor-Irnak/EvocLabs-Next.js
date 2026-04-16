@@ -5,7 +5,6 @@ import { FaPaperPlane } from "react-icons/fa";
 import Link from "next/link";
 
 import Image from "next/image";
-import dashboardImg from "../public/assets/hero-dashboard.jpg";
 
 interface HeroProps {
   onBookDemoClick?: () => void;
@@ -13,24 +12,34 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/EvocLabs-Next.js/assets/hero-bg.jpg"
+          alt="Hero Background"
+          fill
+          className="object-cover opacity-100"
+          priority
+        />
+      </div>
       <div className="container flex flex-col text-center max-w-7xl mx-auto pt-46 px-6 pb-24 items-center relative">
         {/* Main Content */}
         <div className="relative z-10 flex flex-col items-center">
           {/* Main Title */}
           <h1 className="max-w-5xl sm:text-5xl md:text-7xl text-4xl tracking-tighter font-geist mx-auto text-[#f7f8f8] mb-6">
-            Start at{" "}
+            Stop Losing{" "}
             <span
-              className="italic text-[#f7f8f8] tracking-tight font-instrument-serif"
+              className="italic text-[#ff4646] tracking-tight font-instrument-serif"
               style={{ fontFamily: '\"Playfair Display\", serif' }}
             >
-              Zero
-            </span>{" "}
-            Cost, Scale Fast.
+              Customers,
+            </span>
+            <br /> Start Converting.
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm md:text-base text-[#f7f8f8] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+          <p className="text-sm md:text-base text-[#f7f8f8c7] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
             We build brands that sell themselves. You focus on growing your
             business while we handle the strategy, design, and marketing. Pay
             only when you start making sales.
@@ -68,18 +77,6 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
           {/* Trust Anchor */}
           <div className="text-xs font-medium text-[#e6e6e6] tracking-wide mb-20">
             4Cr+ Ad Spend • 250+ Brands Scaled
-          </div>
-        </div>
-
-        {/* Dashboard Section Image */}
-        <div className="relative w-full max-w-5xl mx-auto mt-8 group z-10">
-          <div className="relative bg-[#08070b] rounded-xl border border-white/6 overflow-hidden shadow-2xl">
-            <Image
-              src={dashboardImg}
-              alt="Dashboard Preview"
-              className="w-full h-auto object-cover"
-              priority
-            />
           </div>
         </div>
       </div>

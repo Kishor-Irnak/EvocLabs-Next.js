@@ -2,7 +2,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 import RealAdvisor from "@/components/RealAdvisor";
 import WhyChoosUs from "@/components/WhyChoosUs";
-import { LogoCloud } from "@/components/PartnersLogo";
 import HeroSection from "@/components/HeroSection";
 import HowItWorksSteps from "@/components/HowItWorksSteps";
 import TestimonalCard from "@/components/TestimonalCard";
@@ -42,7 +41,6 @@ export default function Home() {
       <Navbar />
       <main className="relative" style={{ zIndex: 10 }}>
         <Hero />
-        <LogoCloud />
         <ProblemStatement />
         <StatLabel />
         <RealAdvisor />

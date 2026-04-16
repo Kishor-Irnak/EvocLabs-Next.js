@@ -14,9 +14,9 @@ export default function ProblemStatement() {
       />
       <div className="max-w-[460px] relative z-10">
         <p className="font-serif text-3xl text-white leading-snug tracking-tight">
-          Launching a Brand
+          Built for speed, optimized for conversions,
           <br />
-          Shouldn't Cost You Before Your First Order.
+          designed to scale your business.
         </p>
       </div>
     </div>
