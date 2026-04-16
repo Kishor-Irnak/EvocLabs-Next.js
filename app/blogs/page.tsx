@@ -65,7 +65,7 @@ export default function BlogGrid() {
             </h1>
           </div>
 
-          <div className="w-full aspect-[16/9] overflow-hidden rounded-3xl bg-zinc-900 mb-12">
+          <div className="w-full aspect-video overflow-hidden rounded-3xl bg-zinc-900 mb-12">
             <img
               src={selectedPost.image}
               alt={selectedPost.title}

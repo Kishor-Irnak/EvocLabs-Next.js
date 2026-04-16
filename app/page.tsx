@@ -37,20 +37,22 @@ const FooterComponent = dynamic(() => import("@/components/Footer"), {
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-text-main font-sans selection:bg-primary/30 selection:text-primary-hover relative overflow-x-hidden bg-[#08070b]">
+    <div className="min-h-screen text-text-main font-sans selection:bg-primary/30 selection:text-primary-hover relative overflow-x-clip bg-[#08070b]">
       <Navbar />
       <main className="relative" style={{ zIndex: 10 }}>
         <Hero />
-        <ProblemStatement />
-        <StatLabel />
-        <RealAdvisor />
-        <ClusterFeatures />
-        <TestimonalCard />
-        <HowItWorksSteps />
-        <FounderSection />
-        <WhyChoosUs />
-        <FAQ />
-        <HeroSection />
+        <div className="relative z-10 bg-[#08070b]">
+          <ProblemStatement />
+          <StatLabel />
+          <RealAdvisor />
+          <ClusterFeatures />
+          <TestimonalCard />
+          <HowItWorksSteps />
+          <FounderSection />
+          <WhyChoosUs />
+          <FAQ />
+          <HeroSection />
+        </div>
       </main>
       <div className="relative" style={{ zIndex: 10 }}>
         <FooterComponent />

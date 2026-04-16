@@ -12,7 +12,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="sticky top-0 h-svh w-full flex flex-col justify-center overflow-hidden z-0 bg-[#08070b]">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image

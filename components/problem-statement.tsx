@@ -3,7 +3,7 @@ import problemBg from "../public/assets/problem-bg.png";
 
 export default function ProblemStatement() {
   return (
-    <div className="relative flex min-h-screen items-center justify-center bg-[#08070b] p-6 overflow-hidden">
+    <div className="relative z-10 flex min-h-screen items-center justify-center bg-[#08070b] p-6 overflow-hidden">
       {/* Background Image */}
       <Image
         src={problemBg}
