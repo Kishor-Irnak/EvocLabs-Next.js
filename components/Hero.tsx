@@ -30,8 +30,11 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
           <h1 className="max-w-5xl sm:text-5xl md:text-7xl text-4xl tracking-tighter font-geist mx-auto text-[#f7f8f8] mb-6">
             Stop Losing{" "}
             <span
-              className="italic text-[#ff4646] tracking-tight font-instrument-serif"
-              style={{ fontFamily: '\"Playfair Display\", serif' }}
+              className="italic tracking-tight"
+              style={{
+                fontFamily: '"Playfair Display", serif',
+                color: "#fffff",
+              }}
             >
               Customers,
             </span>
@@ -49,13 +52,13 @@ const Hero: React.FC<HeroProps> = ({ onBookDemoClick }) => {
           <div className="flex flex-col sm:flex-row gap-x-4 gap-y-4 items-center mb-4">
             <Link
               href="/book-demo"
-              className="group inline-flex items-center gap-2 transition-all duration-300 text-sm font-semibold text-black bg-white rounded-full pt-3.5 px-6 pb-3.5 shadow-lg hover:shadow-white/10"
+              className="group inline-flex items-center gap-2 transition-all duration-300 text-sm font-semibold text-zinc-900 bg-white rounded-full pt-3.5 px-6 pb-3.5 shadow-lg hover:shadow-white/10"
             >
               <span>Get Started</span>
               <div className="transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-12">
                 <FaPaperPlane
                   size={14}
-                  className="rotate-12 text-black group-hover:text-blue-500"
+                  className="rotate-12 text-zinc-900 group-hover:text-blue-500"
                 />
               </div>
             </Link>

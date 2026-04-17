@@ -40,10 +40,10 @@ const Footer = () => {
               Contact
             </p>
             <a
-              href="mailto:hello@evoclabs.com"
+              href="mailto:webmines.in@gmail.com"
               className="block text-lg font-sans mb-2 text-text-main hover:text-primary transition-colors tracking-tight"
             >
-              hello@evoclabs.com
+              webmines.in@gmail.com
             </a>
             <p className="text-sm text-text-secondary mb-6">
               +55 11 99999-9999
@@ -99,7 +99,7 @@ const Footer = () => {
       {/* Decorative Big Text Section */}
       <div className="w-full text-center leading-none overflow-hidden border-t border-border">
         <h1 className="text-[18vw] font-bold leading-[0.75] font-sans text-text-main/5 tracking-tighter select-none pointer-events-none -mb-[0.05em] pt-4">
-          EVOC LABS
+          Webmines
         </h1>
       </div>
     </footer>

@@ -248,7 +248,7 @@ export default function MasterStrategy() {
         </div>
         <div className="absolute hidden md:block md:top-[68vh] md:left-[49vw] md:w-[22vw]">
           <p className="text-xs uppercase tracking-wider text-[#666] leading-relaxed font-medium pr-4">
-            Develop fast, optimized builds ready for immediate launch.
+            optimized builds ready for immediate launch.
           </p>
         </div>
 

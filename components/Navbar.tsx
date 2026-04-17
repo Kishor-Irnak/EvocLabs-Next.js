@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 px-6 py-4 flex justify-center transition-all duration-500 ${
         isScrolled
-          ? "bg-[#08070b]/95 backdrop-blur-md border-b border-white/6"
+          ? "bg-[#08070b]/40 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.36)]"
           : "bg-transparent"
       }`}
     >
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
           <div className="w-12 h-12 relative">
             <Image
               src={logoImg}
-              alt="Evoc Labs"
+              alt="Webmines"
               fill
               className="object-contain object-left filter brightness-125"
               priority
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               href={link.href}
-              className="flex items-center gap-1 text-sm font-medium text-zinc-300 hover:text-white transition-colors"
+              className="flex items-center gap-1 text-sm font-medium text-white hover:text-pink-500 transition-colors"
             >
               {link.name}
               {link.hasDropdown && (
@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
           </Link>
           <Link
             href="/book-demo"
-            className="group bg-[#ff4646] text-white text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+            className="group bg-[#ffffff] text-zinc-900 text-sm font-medium pl-6 pr-5 py-2.5 rounded-full hidden sm:flex items-center gap-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.4)]"
           >
             <span>Get Started</span>
             <div className="transition-all duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-110 group-hover:rotate-12">
