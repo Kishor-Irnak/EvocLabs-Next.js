@@ -1,29 +1,13 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import RealAdvisor from "@/components/RealAdvisor";
-import WhyChoosUs from "@/components/WhyChoosUs";
+
 import HeroSection from "@/components/HeroSection";
-import HowItWorksSteps from "@/components/HowItWorksSteps";
-import TestimonalCard from "@/components/TestimonalCard";
-import FounderSection from "@/components/FounderSection";
-import FAQ from "@/components/FAQ";
+
 import MasterStrategy from "../components/Strategy";
 
 // Critical components - load with ssr true but wrap in dynamic for chunking
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: true });
 const Hero = dynamic(() => import("@/components/Hero"), { ssr: true });
-const ClusterFeatures = dynamic(() => import("@/components/ClusterFeatures"), {
-  ssr: true,
-});
-const StatLabel = dynamic(() => import("@/components/StatLabel"), {
-  ssr: true,
-});
-const ConnectedKnowledge = dynamic(
-  () => import("@/components/ConnectedKnowledge"),
-  {
-    ssr: true,
-  },
-);
 const ProblemStatement = dynamic(
   () => import("@/components/problem-statement"),
   {
@@ -45,14 +29,6 @@ export default function Home() {
         <div className="relative z-10 bg-[#08070b]">
           <ProblemStatement />
           <MasterStrategy />
-          <StatLabel />
-          <RealAdvisor />
-          <ClusterFeatures />
-          <TestimonalCard />
-          <HowItWorksSteps />
-          <FounderSection />
-          <WhyChoosUs />
-          <FAQ />
           <HeroSection />
         </div>
       </main>
